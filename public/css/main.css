@@ -1,0 +1,178 @@
+body{
+    text-align: center;
+    font-family: 'Questrial', sans-serif;
+    font-size: 12pt;
+}
+
+#cover{
+    background: #3d4551;
+}
+
+#cover p{
+    color: #FFF;
+}
+
+.line{
+
+}
+
+#about{
+    background: #FFFFFF;
+}
+
+#chat{
+    margin-top: 2em;
+}
+
+.lead{
+    margin-top: 5em;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    color: #404040;
+}
+
+p, ol, ul {
+    margin-top: 0;
+}
+
+
+p {
+    line-height: 180%;
+}
+
+
+a {
+    color: #16A085;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+/*********************************************************************************/
+/* Logo                                                                          */
+/*********************************************************************************/
+
+#logo h1 {
+    display: inline-block;
+    margin-bottom: 0.20em;
+    font-size: 3.5em;
+}
+
+#logo a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+/*********************************************************************************/
+/* Heading Titles                                                                */
+/*********************************************************************************/
+.title h2 {
+    font-size: 2.5em;
+    color: #C6C2C4;
+
+}
+
+.title .byline {
+    font-size: 1.1em;
+    color: #525252;
+}
+
+
+
+.button
+{
+    display: inline-block;
+    margin-top: 2em;
+    padding: 0.8em 2em;
+    background: #FFFFFF;
+    line-height: 1.8em;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 1em;
+    color: #2F1E28;
+}
+
+.borders{
+    border-bottom: 1px solid;
+}
+
+
+/*******************************************************/
+/* Footers */
+/*******************************************************/
+
+#footer{
+    margin-top: 5em;
+    background: #3d4551;
+}
+
+#footer p{
+    color: #FFFFFF;
+}
+
+#footer a{
+    color: #00babf;
+}
+
+#footer a:hover{
+    color: darkblue;
+}
+
+
+/*******************************************************/
+/* Media Query */
+/*******************************************************/
+
+
+
+@media only screen and (min-width : 980px) and (max-width : 1024px){
+
+}
+
+
+@media only screen and (min-width : 768px) and (max-width : 979px){
+
+}
+
+@media only screen and (min-width : 564px) and (max-width : 767px) {
+    .title h2 {
+        font-size: 1.5em;
+        color: #C6C2C4;
+
+    }
+    .borders{
+        margin: 0px 10px 0px 10px;
+    }
+    .lead{
+        margin: 5em 10px 0px 10px;
+    }
+}
+
+@media only screen and (min-width : 240px) and (max-width : 300px) {
+    #logo h1 {
+        display: inline-block;
+        margin-bottom: 0.20em;
+        font-size: 2.5em;
+    }
+    .title h2 {
+        font-size: 1.5em;
+        color: #C6C2C4;
+
+    }
+    .borders{
+        margin: 0px 10px 0px 10px;
+    }
+    .lead{
+        margin: 5em 10px 0px 10px;
+    }
+    #about h1{
+        font-size: 40pt;
+    }
+
+}
+

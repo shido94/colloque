@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/c_register.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <style>
+
+        #messageArea{
+            display: none;
+        }
+
+        .down{
+            background-image: url("../images/black.jpg");
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /*background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("../images/black.jpg");*/
+        }
+
+        .chat
+        {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .chat li
+        {
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted #B3A9A9;
+        }
+
+        .chat li
+        {
+            margin-left: 60px;
+        }
+
+        .chat li .chat-body p
+        {
+            margin: 0;
+            color: #777777;
+        }
+
+        .panel , .chat
+        {
+            margin-right: 5px;
+        }
+
+        .panel-body
+        {
+            margin-top: 10px;
+            overflow: auto;
+            height: 490px;
+        }
+
+        ::-webkit-scrollbar-track
+        {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            background-color: #F5F5F5;
+        }
+
+        ::-webkit-scrollbar
+        {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        ::-webkit-scrollbar-thumb
+        {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #555;
+        }
+
+        .logo{
+            text-align: center;
+        }
+
+        .logo h1 {
+            text-align: center;
+            display: inline-block;
+            margin-bottom: 0.0em;
+            font-size: 3.5em;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #F5F5F5;
+        }
+
+        #exitButton button{
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 10px;
+            width:50%;
+        }
+
+
+        #online{
+            width: 200px;
+            background: #FFFFFF;
+            color: #C62D2A;
+            display: table;
+            margin: 0 auto;
+        }
+
+        #server{
+            background: #FFFFFF;
+            color: #CB4B16;
+        }
+
+        i {
+            margin: 0 8px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        img {
+            transition: -webkit-transform 0.25s ease;
+            transition: transform 0.25s ease;
+        }
+
+        img:active {
+            -webkit-transform: scale(2);
+            transform: scale(2);
+        }
+
+    </style>
+
+</head>
+<body id="body">
+<div class="jumbotron jumbotron-fluid" id="cover">
+    <div class="container">
+        <div id="logo">
+            <h1><a href="/">Letz Chat</a></h1>
+        </div>
+        <p id="error"></p>
+        <div class="pick_up">
+            <p id="lines"><i></i></p>
+        </div>
+        <form id="userForm">
+            <div class="form-group">
+                <label for="exampleInputPassword1">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="lead">
+            <p >You are going to chat with random person.<br>
+                Please avoid abusive language.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="down">
+    <div class="container" id="messageArea">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6">
+                <div class="logo">
+                    <h1><a href="/">Letz Chat</a></h1>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <ul class="server" id="server"></ul>
+                        <ul class="chat" id="chat"></ul>
+                        <ul>
+                            <div id="blah"></div>
+                        </ul>
+                        <ul id="status"></ul>
+                        <div class="reconnect" id="new_chat">
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="col-md-4">
+
+                                <span class="input-group-btn" id="exitButton">
+                                    <ul id="online"></ul>
+                                    <button class="btn btn-warning btn-sm" id="reconnect">Chat</button>
+                                    &nbsp
+                                    <button class="btn btn-warning btn-sm" id="home">Exit</button>
+                                </span>
+                            </div>
+                            <div class="col-md-4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-warning btn-sm" id="disconnectChat">Esc</button>
+                            </span>
+                            <input id="message" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                            <span class="input-group-btn">
+                                <label for="file-input">
+                                    <i class="fa fa-paperclip fa-lg" aria-hidden="true"></i>
+                                </label>
+                                <input type="file" class="file-input hide" name="file" id="file-input">
+                                <button class="btn btn-warning btn-sm" id="messageForm">Send</button>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    $(function() {
+        var socket = io.connect();
+        var $newChat = $('#new_chat');
+        var $reConnect = $("#reconnect");
+        var $status = $('#status');
+        var $disconnect = $('#disconnectChat');
+        var $messageForm = $('#messageForm');
+        var $message = $('#message');
+        var $chat = $('#chat');
+        var $messageArea = $('#messageArea');
+        var $userFormArea = $('#cover');
+        var $userForm = $('#userForm');
+        var $users = $('#online');
+        var $username = $('#username');
+
+        var timeout;
+        var typing;
+
+        var lines = ['I’m not a photographer, but I can picture me and you together.','Sorry, I forgot your name, can I call you mine?',
+        'I’m lost. Can you give me directions to your heart?','Hello, I’m a thief, and I’m here to steal your heart.']
+
+        var line = lines[Math.floor(Math.random() * lines.length)];
+        var div = document.getElementById('lines');
+        div.innerHTML = line;
+
+        function timeoutFunction() {
+            typing = false;
+            socket.emit("typing", false);
+        }
+
+        $("#home").click(()=>{
+            window.location = '/';
+        });
+
+        $('.file-input').bind('change', function(e){
+            var data = e.originalEvent.target.files[0];
+            readThenSendFile(data);
+        });
+
+        function readThenSendFile(data){
+
+            var reader = new FileReader();
+            reader.onload = function(evt){
+                var msg ={};
+                msg.file = evt.target.result;
+                msg.fileName = data.name;
+                socket.emit('file submit', msg);
+            };
+            reader.readAsDataURL(data);
+        }
+
+        socket.on('file submitted',(data)=>{
+            $chat.append('<div class="well" style="background: #FFFFFF"><strong>' + data.username  + '</strong> : ' + "<img src='" + data.file + "' width=100 height=100 />" + '</div>');
+            $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+        });
+
+        $message.keyup(function(e) {
+            typing = true;
+            socket.emit('typing', 'typing...');
+            clearTimeout(timeout);
+            timeout = setTimeout(timeoutFunction, 2000);
+        });
+
+        socket.on('typing', function(data) {
+            if (data) {
+                $status.html(data);
+            } else {
+                $status.html("");
+            }
+        });
+
+        // when the client hits ENTER on their keyboard
+        $message.keypress(function(e) {
+            if(e.which == 13) {
+                $(this).blur();
+                $messageForm.focus().click();
+            }
+        });
+
+        $messageForm.click(function (e) {
+            e.preventDefault();
+            socket.emit('send message', $message.val());
+            $message.val('');
+        });
+
+        socket.on('user status', function (data) {
+            console.log(data);
+            $("#server").append('<div class="well" style="text-align: center"><strong>' + data.user + '</strong> : ' + data.msg + '</div>').scrollTop(1E10);
+        });
+
+        socket.on('new message', function (data) {
+            $chat.append('<div class="well" ><strong>' + data.user + '</strong> : ' + data.msg + '</div>').scrollTop(1E10);
+            $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+
+        });
+
+        socket.on('user disconnect', () => {
+            $messageForm.hide();
+            $newChat.show();
+            $('.panel-footer').hide();
+            $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+        });
+
+        $disconnect.click((e) => {
+            e.preventDefault();
+            socket.emit('user disconnect', socket.id, (data) => {
+                if(data){
+                    $messageForm.hide();
+                    $newChat.show();
+                    $('.panel-footer').hide();
+                    $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+                }
+            });
+        });
+
+        socket.on('users online',(data)=>{
+            if(data.c_length == undefined){
+                $users.append('<div class="well"><strong>' + "Total online" + '</strong> : ' + data.length + '</div>');
+            }
+            else{
+                $users.append('<div class="well"><strong>' + "Total online" + '</strong> : ' + data.c_length + '</div>')
+            }
+        });
+
+        $userForm.submit(function (e) {
+            e.preventDefault();
+            socket.emit('new user', $username.val(), function (data) {
+                console.log($username.val());
+//                if($username.val() == ' '){}
+                if (data) {
+                    $userFormArea.hide();
+                    $newChat.hide();
+                    $messageArea.show();
+                    $("body").css("background" , "#FFFFFF");
+                }
+            });
+            $username.val('');
+        });
+
+        $reConnect.click((e)=>{
+            $chat.empty();
+            $("#server").empty();
+            $users.empty();
+            e.preventDefault();
+            socket.emit('user reconnect', socket.id,(data)=>{
+                if(data){
+                    $newChat.hide();
+                    $messageForm.show();
+                    $('.panel-footer').show();
+                }
+            })
+        });
+
+
+    });
+</script>
+</html>
