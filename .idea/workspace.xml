@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2904818c-aa50-45e3-9ecf-8cd9940171c0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/c_register.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/c_register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/c_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/c_register.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,14 +17,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="c_register.ejs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="178" column="43" selection-start-line="178" selection-start-column="43" selection-end-line="178" selection-end-column="43" />
+            <state relative-caret-position="30">
+              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
               <folding>
-                <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#8037#8330#0" />
+                <element signature="e#9900#10143#0" />
+                <element signature="e#10330#10755#0" />
+                <element signature="e#10810#12655#0" />
+                <element signature="e#12719#13105#0" />
+                <element signature="e#13229#13450#0" />
               </folding>
             </state>
           </provider>
@@ -35,8 +37,12 @@
       <file leaf-file-name="r_register.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="242" column="37" selection-start-line="242" selection-start-column="32" selection-end-line="242" selection-end-column="37" />
+            <state relative-caret-position="15">
+              <caret line="155" selection-start-line="155" selection-end-line="155" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,9 +51,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cons</find>
-      <find>c_new user</find>
-      <find>c_user disconnect</find>
       <find>c_roomsArrays</find>
       <find>c_connected.push</find>
       <find>Object.keys</find>
@@ -70,11 +73,14 @@
       <find>file-in</find>
       <find>send mes</find>
       <find>send message</find>
-      <find>new user</find>
       <find>send me</find>
       <find>new messa</find>
-      <find>cover</find>
       <find>foo</find>
+      <find>new us</find>
+      <find>cover</find>
+      <find>new user</find>
+      <find>new use</find>
+      <find>user d</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -104,11 +110,11 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/views/main.ejs" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/views/r_register.ejs" />
         <option value="$PROJECT_DIR$/public/css/c_register.css" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/views/c_register.ejs" />
+        <option value="$PROJECT_DIR$/views/r_register.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -151,17 +157,6 @@
             <path>
               <item name="NEWCHAT" type="b2602c69:ProjectViewProjectNode" />
               <item name="NEWCHAT" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NEWCHAT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NEWCHAT" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NEWCHAT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NEWCHAT" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NEWCHAT" type="b2602c69:ProjectViewProjectNode" />
@@ -247,12 +242,12 @@
       <workItem from="1530721369787" duration="203000" />
       <workItem from="1530770473905" duration="458000" />
       <workItem from="1530790640357" duration="10979000" />
-      <workItem from="1530893757981" duration="34356000" />
+      <workItem from="1530893757981" duration="35874000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="331601000" />
+    <option name="totallyTimeSpent" value="333119000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-11" width="1301" height="780" extended-state="6" />
@@ -429,13 +424,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="242" column="37" selection-start-line="242" selection-start-column="32" selection-end-line="242" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/main.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -450,35 +438,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="371" column="41" lean-forward="true" selection-start-line="371" selection-start-column="41" selection-end-line="371" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="393" column="8" selection-start-line="393" selection-start-column="8" selection-end-line="393" selection-end-column="8" />
+        <state relative-caret-position="30">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
           <folding>
-            <element signature="e#1394#7857#0" />
             <element signature="e#8037#8330#0" />
-            <element signature="e#8383#9848#0" />
             <element signature="e#9900#10143#0" />
             <element signature="e#10330#10755#0" />
             <element signature="e#10810#12655#0" />
             <element signature="e#12719#13105#0" />
             <element signature="e#13229#13450#0" />
-            <element signature="e#13795#14000#0" />
-            <element signature="e#14041#15701#0" />
-            <element signature="e#15741#18027#0" />
-            <element signature="e#18073#18797#0" />
-            <element signature="e#18842#19118#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="178" column="43" selection-start-line="178" selection-start-column="43" selection-end-line="178" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

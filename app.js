@@ -57,6 +57,8 @@ app.get('/ran_signup', (req, res) => {
 io.on("connection",(socket)=> {
 
     socket.on('disconnect', function () {
+
+
         socket.broadcast.to(socket.room).emit
         ('user status', {
             msg: socket.username + ' has disconnect from room',
@@ -190,36 +192,6 @@ io.on("connection",(socket)=> {
             io.sockets.in(socket.randomRoom).emit('disconnect_window', 'disconnect');
 
         }
-
-        // if (socket.id == socket.room && checkConnected > -1) {
-        //     var index2 = connected.indexOf(socket.id);
-        //     var index3 = connected.indexOf(socket.randomRoom);
-        //     if (index2 > -1) {
-        //         connected.splice(index2, 1);
-        //         connected.splice(index3, 1);
-        //         socket.leave(socket.room);
-        //         socket.leave(socket.randomRoom);
-        //         waitingQueue.push(socket.randomRoom);
-        //         io.sockets.in(socket.room).emit('user status', {
-        //             msg: socket.username + ' is disconnected from this room',
-        //             user: 'SERVER'
-        //         });
-        //         io.sockets.in(socket.room).emit('disconnect_window', 'disconnect');
-        //     }
-        // }
-        // else {
-        //     var index2 = connected.indexOf(socket.id);
-        //     var index3 = connected.indexOf(socket.randomRoom);
-        //     if (index2 > -1) {
-        //         connected.splice(index2, 1);
-        //         connected.splice(index3, 1);
-        //         socket.leave(socket.room);
-        //         socket.leave(socket.randomRoom);
-        //         waitingQueue.push(socket.id);
-        //         io.sockets.in(socket.room).emit('user status', {msg: socket.username + ' is disconnected from this room', user: 'SERVER'});
-        //         io.sockets.in(socket.room).emit('disconnect_window', 'disconnect');
-        //     }
-        // }
 
     });
 
