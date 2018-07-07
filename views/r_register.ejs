@@ -22,7 +22,7 @@
         }
 
         .down{
-            background-image: url("../images/black.jpg");
+            background-image: url('../images/black.jpg');
 
             /* Full height */
             height: 100%;
@@ -214,9 +214,9 @@
                             <input id="message" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                             <span class="input-group-btn">
                                 <label for="file-input">
-                                    <i class="fa fa-paperclip fa-lg" aria-hidden="true"></i>
+                                    <i id="design" class="fa fa-paperclip fa-lg" aria-hidden="true"></i>
                                 </label>
-                                <input type="file" class="file-input hide" name="file" id="file-input">
+                                <input type="file" class="file-input hide" name="file" accept="images/*" id="file-input">
                                 <button class="btn btn-warning btn-sm" id="messageForm">Send</button>
                         </span>
                         </div>
@@ -244,6 +244,7 @@
         var $userForm = $('#userForm');
         var $users = $('#online');
         var $username = $('#username');
+        var $fileInput = $('#file-input');
 
         var timeout;
         var typing;
@@ -327,9 +328,11 @@
         });
 
         socket.on('user disconnect', () => {
-            $messageForm.hide();
             $newChat.show();
-            $('.panel-footer').hide();
+            $disconnect.attr('disabled',true);
+            $messageForm.attr('disabled',true);
+            $message.attr('disabled',true);
+            $fileInput.attr('disabled',true);
             $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
         });
 
@@ -337,9 +340,12 @@
             e.preventDefault();
             socket.emit('user disconnect', socket.id, (data) => {
                 if(data){
-                    $messageForm.hide();
+                    // $messageForm.hide();
                     $newChat.show();
-                    $('.panel-footer').hide();
+                    $disconnect.attr('disabled',true);
+                    $messageForm.attr('disabled',true);
+                    $message.attr('disabled',true);
+                    $fileInput.attr('disabled',true);
                     $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
                 }
             });
@@ -365,6 +371,9 @@
                     $messageArea.show();
                     $("body").css("background" , "#FFFFFF");
                 }
+                else{
+                    alert("Please enter some username");
+                }
             });
             $username.val('');
         });
@@ -377,12 +386,14 @@
             socket.emit('user reconnect', socket.id,(data)=>{
                 if(data){
                     $newChat.hide();
-                    $messageForm.show();
+                    $disconnect.attr('disabled',false);
+                    $messageForm.attr('disabled',false);
+                    $message.attr('disabled',false);
+                    $fileInput.attr('disabled',false);
                     $('.panel-footer').show();
                 }
             })
         });
-
 
     });
 </script>

@@ -357,11 +357,15 @@
                 username : $username.val(),
                 email : $email.val()
             }, function (data) {
+                console.log(data);
                 if (data) {
                     $userFormArea.hide();
                     $newChat.hide();
                     $messageArea.show();
                     $("body").css("background" , "#FFFFFF");
+                }
+                else{
+                    alert("Please submit username and password");
                 }
             });
             $username.val('');
@@ -371,8 +375,11 @@
             e.preventDefault();
             socket.emit('c_user disconnect', socket.id, (data) => {
                 if(data){
-                    $messageForm.hide();
                     $newChat.show();
+                    $disconnect.attr('disabled',true);
+                    $messageForm.attr('disabled',true);
+                    $message.attr('disabled',true);
+                    $fileInput.attr('disabled',true);
                     $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
                 }
             });
@@ -386,16 +393,21 @@
             socket.emit('c_user reconnect', socket.id,(data)=>{
                 if(data){
                     $newChat.hide();
-                    $messageForm.show();
+                    $disconnect.attr('disabled',false);
+                    $messageForm.attr('disabled',false);
+                    $message.attr('disabled',false);
+                    $fileInput.attr('disabled',false);
                     $('.panel-footer').show();
                 }
             })
         });
 
         socket.on('c_user disconnect', () => {
-            $messageForm.hide();
             $newChat.show();
-
+            $disconnect.attr('disabled',true);
+            $messageForm.attr('disabled',true);
+            $message.attr('disabled',true);
+            $fileInput.attr('disabled',true);
             $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
         })
 
