@@ -153,7 +153,6 @@
         <div id="logo">
             <h1><a href="/">Letz Chat</a></h1>
         </div>
-        <p id="error"></p>
         <div class="pick_up">
             <p id="lines"><i></i></p>
         </div>
@@ -162,6 +161,7 @@
                 <label for="exampleInputPassword1">Username</label>
                 <input type="text" class="form-control" id="username" placeholder="Enter username">
             </div>
+            <p id="error" style="color: red"></p>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <div class="lead">
@@ -245,6 +245,7 @@
         var $users = $('#online');
         var $username = $('#username');
         var $fileInput = $('#file-input');
+        var $error = $('#error');
 
         var timeout;
         var typing;
@@ -382,7 +383,7 @@
                     $("body").css("background" , "#FFFFFF");
                 }
                 else{
-                    alert("Please enter some username");
+                    $error.text('Please submit username and password');
                 }
             });
             $username.val('');

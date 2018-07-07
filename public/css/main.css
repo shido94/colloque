@@ -5,7 +5,7 @@ body{
 }
 
 #cover{
-    background: #3d4551;
+    background: #03A295;
 }
 
 #cover p{
@@ -108,7 +108,7 @@ a:hover {
 
 #footer{
     margin-top: 5em;
-    background: #3d4551;
+    background: #03A295;
 }
 
 #footer p{
@@ -116,7 +116,7 @@ a:hover {
 }
 
 #footer a{
-    color: #00babf;
+    color: #013961;
 }
 
 #footer a:hover{

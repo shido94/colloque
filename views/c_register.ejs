@@ -176,6 +176,7 @@
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
+            <p id="error" style="color: red"></p>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <div class="lead">
@@ -264,6 +265,7 @@
         var $users = $('#online');
         var $username = $('#username');
         var $email = $('#email');
+        var $error = $('#error');
 
 
         var timeout;
@@ -329,15 +331,17 @@
             $message.val('');
         });
 
-
         socket.on('user status', function (data) {
             console.log(data);
             $("#server").append('<div class="well" style="text-align: center"><strong>' + data.user + '</strong> : ' + data.msg + '</div>').scrollTop(1E10);
         });
 
-        socket.on('new message', function (data) {
-            $chat.append('<div class="well"><strong>' + data.user + '</strong> : ' + data.msg + '</div>');
-            $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+        socket.on('new message', (message)  => {
+            console.log(message.msg);
+            if(message.msg.length > 0) {
+                $chat.append('<div class="well" ><strong>' + message.user + '</strong> : ' + message.msg + '</div>').scrollTop(1E10);
+                $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+            }
         });
 
         socket.on('users online',(data)=>{
@@ -365,7 +369,7 @@
                     $("body").css("background" , "#FFFFFF");
                 }
                 else{
-                    alert("Please submit username and password");
+                    $error.text('Please submit username and password');
                 }
             });
             $username.val('');
