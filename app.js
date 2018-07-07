@@ -395,7 +395,7 @@ io.on("connection",(socket)=> {
     });
 
     socket.on('file submit', (msg)=> {
-        var send = {
+        let send = {
             username: socket.username,
             file: msg.file,
             fileName: msg.fileName

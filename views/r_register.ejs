@@ -320,12 +320,22 @@
             console.log(data);
             $("#server").append('<div class="well" style="text-align: center"><strong>' + data.user + '</strong> : ' + data.msg + '</div>').scrollTop(1E10);
         });
+        //
+        // socket.on('new message', function (data) {
+        //     $chat.append('<div class="well" ><strong>' + data.user + '</strong> : ' + data.msg + '</div>').scrollTop(1E10);
+        //     $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+        //
+        // });
 
-        socket.on('new message', function (data) {
-            $chat.append('<div class="well" ><strong>' + data.user + '</strong> : ' + data.msg + '</div>').scrollTop(1E10);
-            $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
 
+        socket.on('new message', (message)  => {
+            console.log(message.msg);
+            if(message.msg.length > 0) {
+                $chat.append('<div class="well" ><strong>' + message.user + '</strong> : ' + message.msg + '</div>').scrollTop(1E10);
+                $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+            }
         });
+
 
         socket.on('user disconnect', () => {
             $newChat.show();

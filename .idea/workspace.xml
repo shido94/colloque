@@ -4,8 +4,6 @@
     <list default="true" id="2904818c-aa50-45e3-9ecf-8cd9940171c0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/c_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/c_register.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/main.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/main.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/r_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/r_register.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,53 +18,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="290" lean-forward="true" selection-start-line="290" selection-end-line="290" />
+            <state relative-caret-position="218">
+              <caret line="393" column="8" selection-start-line="393" selection-start-column="8" selection-end-line="393" selection-end-column="8" />
               <folding>
-                <element signature="e#1394#6352#0" />
-                <element signature="e#1474#1600#0" />
-                <element signature="e#1638#1690#0" />
-                <element signature="e#1830#1882#0" />
-                <element signature="e#1920#2169#0" />
-                <element signature="e#2272#3286#0" />
-                <element signature="e#3182#3206#0" />
-                <element signature="e#5148#5206#0" />
-                <element signature="e#5288#5344#0" />
-                <element signature="e#5031#5055#0" />
-                <element signature="e#6345#6678#0" />
-                <element signature="e#6731#8283#0" />
-                <element signature="e#8981#10398#0" />
-                <element signature="e#8677#11007#0" />
-                <element signature="e#12549#14101#0" />
-                <element signature="e#9602#9626#0" />
-                <element signature="e#14165#16124#0" />
-                <element signature="e#16248#16469#0" />
-                <element signature="e#16538#16637#0" />
-                <element signature="e#16678#16883#0" />
-                <element signature="e#17924#17940#0" />
-                <element signature="e#18371#18681#0" />
-                <element signature="e#19868#20134#0" />
-                <element signature="e#17755#17771#0" />
-                <element signature="e#15333#15642#0" />
-                <element signature="e#17519#17785#0" />
-                <element signature="e#16931#17650#0" />
-                <element signature="e#17685#17927#0" />
+                <element signature="e#1394#7857#0" />
+                <element signature="e#8037#8330#0" />
+                <element signature="e#8383#9848#0" />
+                <element signature="e#9900#10143#0" />
+                <element signature="e#10330#10755#0" />
+                <element signature="e#10810#12655#0" />
+                <element signature="e#12719#13105#0" />
+                <element signature="e#13229#13450#0" />
+                <element signature="e#13795#14000#0" />
+                <element signature="e#14041#15701#0" />
+                <element signature="e#15741#18027#0" />
+                <element signature="e#18073#18797#0" />
+                <element signature="e#18842#19118#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="r_register.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="r_register.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+            <state relative-caret-position="193">
+              <caret line="333" column="101" selection-start-line="333" selection-start-column="101" selection-end-line="333" selection-end-column="101" />
               <folding>
+                <element signature="e#8305#8624#0#HTML" />
+                <element signature="e#8669#8965#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#9004#9182#0#HTML" />
+                <element signature="e#9229#9369#0#HTML" />
+                <element signature="e#9467#9602#0#HTML" />
+                <element signature="e#9829#10028#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#10410#10696#0#HTML" />
+                <element signature="e#10609#11009#0#HTML" />
+                <element signature="e#11054#11396#0#HTML" />
+                <element signature="e#11438#12016#0#HTML" />
+                <element signature="e#12050#12428#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -94,13 +88,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>users</find>
-      <find>c_random_number</find>
-      <find>random_number</find>
       <find>socket.room</find>
       <find>rooms</find>
       <find>io.sockets.adapter</find>
-      <find>new user</find>
       <find>cons</find>
       <find>c_new user</find>
       <find>c_user disconnect</find>
@@ -124,6 +114,10 @@
       <find>send messa</find>
       <find>reconne</find>
       <find>file-in</find>
+      <find>send mes</find>
+      <find>send message</find>
+      <find>new user</find>
+      <find>send me</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,9 +149,9 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/views/main.ejs" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/c_register.ejs" />
         <option value="$PROJECT_DIR$/views/r_register.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -285,12 +279,12 @@
       <workItem from="1530721369787" duration="203000" />
       <workItem from="1530770473905" duration="458000" />
       <workItem from="1530790640357" duration="10979000" />
-      <workItem from="1530893757981" duration="32083000" />
+      <workItem from="1530893757981" duration="33209000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329328000" />
+    <option name="totallyTimeSpent" value="330454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-11" width="1301" height="780" extended-state="6" />
@@ -301,7 +295,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13416536" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24804991" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.21528861" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -481,43 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="290" lean-forward="true" selection-start-line="290" selection-end-line="290" />
-          <folding>
-            <element signature="e#1394#6352#0" />
-            <element signature="e#1474#1600#0" />
-            <element signature="e#1638#1690#0" />
-            <element signature="e#1830#1882#0" />
-            <element signature="e#1920#2169#0" />
-            <element signature="e#2272#3286#0" />
-            <element signature="e#3182#3206#0" />
-            <element signature="e#5148#5206#0" />
-            <element signature="e#5288#5344#0" />
-            <element signature="e#5031#5055#0" />
-            <element signature="e#6345#6678#0" />
-            <element signature="e#6731#8283#0" />
-            <element signature="e#8981#10398#0" />
-            <element signature="e#8677#11007#0" />
-            <element signature="e#12549#14101#0" />
-            <element signature="e#9602#9626#0" />
-            <element signature="e#14165#16124#0" />
-            <element signature="e#16248#16469#0" />
-            <element signature="e#16538#16637#0" />
-            <element signature="e#16678#16883#0" />
-            <element signature="e#17924#17940#0" />
-            <element signature="e#18371#18681#0" />
-            <element signature="e#19868#20134#0" />
-            <element signature="e#17755#17771#0" />
-            <element signature="e#15333#15642#0" />
-            <element signature="e#17519#17785#0" />
-            <element signature="e#16931#17650#0" />
-            <element signature="e#17685#17927#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1361">
@@ -536,11 +493,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        <state relative-caret-position="193">
+          <caret line="333" column="101" selection-start-line="333" selection-start-column="101" selection-end-line="333" selection-end-column="101" />
           <folding>
+            <element signature="e#8305#8624#0#HTML" />
+            <element signature="e#8669#8965#0#HTML" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#9004#9182#0#HTML" />
+            <element signature="e#9229#9369#0#HTML" />
+            <element signature="e#9467#9602#0#HTML" />
+            <element signature="e#9829#10028#0#HTML" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#10410#10696#0#HTML" />
+            <element signature="e#10609#11009#0#HTML" />
+            <element signature="e#11054#11396#0#HTML" />
+            <element signature="e#11438#12016#0#HTML" />
+            <element signature="e#12050#12428#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="393" column="8" selection-start-line="393" selection-start-column="8" selection-end-line="393" selection-end-column="8" />
+          <folding>
+            <element signature="e#1394#7857#0" />
+            <element signature="e#8037#8330#0" />
+            <element signature="e#8383#9848#0" />
+            <element signature="e#9900#10143#0" />
+            <element signature="e#10330#10755#0" />
+            <element signature="e#10810#12655#0" />
+            <element signature="e#12719#13105#0" />
+            <element signature="e#13229#13450#0" />
+            <element signature="e#13795#14000#0" />
+            <element signature="e#14041#15701#0" />
+            <element signature="e#15741#18027#0" />
+            <element signature="e#18073#18797#0" />
+            <element signature="e#18842#19118#0" />
           </folding>
         </state>
       </provider>
