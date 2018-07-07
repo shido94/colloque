@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2904818c-aa50-45e3-9ecf-8cd9940171c0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/r_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/r_register.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -34,12 +34,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="r_register.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="r_register.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="155" selection-start-line="155" selection-end-line="155" />
+            <state relative-caret-position="190">
+              <caret line="218" column="94" selection-start-line="218" selection-start-column="94" selection-end-line="218" selection-end-column="94" />
               <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -113,8 +114,8 @@
         <option value="$PROJECT_DIR$/public/css/c_register.css" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/views/c_register.ejs" />
-        <option value="$PROJECT_DIR$/views/r_register.ejs" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/r_register.ejs" />
       </list>
     </option>
   </component>
@@ -242,12 +243,12 @@
       <workItem from="1530721369787" duration="203000" />
       <workItem from="1530770473905" duration="458000" />
       <workItem from="1530790640357" duration="10979000" />
-      <workItem from="1530893757981" duration="35874000" />
+      <workItem from="1530893757981" duration="37331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="333119000" />
+    <option name="totallyTimeSpent" value="334576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-11" width="1301" height="780" extended-state="6" />
@@ -449,17 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="155" selection-start-line="155" selection-end-line="155" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -471,6 +461,18 @@
             <element signature="e#10810#12655#0" />
             <element signature="e#12719#13105#0" />
             <element signature="e#13229#13450#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="218" column="94" selection-start-line="218" selection-start-column="94" selection-end-line="218" selection-end-column="94" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

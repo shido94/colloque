@@ -216,7 +216,7 @@
                                 <label for="file-input">
                                     <i id="design" class="fa fa-paperclip fa-lg" aria-hidden="true"></i>
                                 </label>
-                                <input type="file" class="file-input hide" name="file" accept="images/*" id="file-input">
+                                <input type="file" class="file-input hide" name="file" capture accept="images/*" id="file-input">
                                 <button class="btn btn-warning btn-sm" id="messageForm">Send</button>
                         </span>
                         </div>
@@ -230,7 +230,7 @@
 </body>
 <script>
 
-    $(function() {
+    $(function(){
         var socket = io.connect();
         var $newChat = $('#new_chat');
         var $reConnect = $("#reconnect");
@@ -251,7 +251,7 @@
         var typing;
 
         var lines = ['I’m not a photographer, but I can picture me and you together.','Sorry, I forgot your name, can I call you mine?',
-        'I’m lost. Can you give me directions to your heart?','Hello, I’m a thief, and I’m here to steal your heart.']
+            'I’m lost. Can you give me directions to your heart?','Hello, I’m a thief, and I’m here to steal your heart.']
 
         var line = lines[Math.floor(Math.random() * lines.length)];
         var div = document.getElementById('lines');
@@ -405,6 +405,9 @@
                 }
             })
         });
+    });
+
+    $(function() {
 
     });
 </script>
