@@ -515,8 +515,8 @@ io.on("connection",(socket)=> {
 });
 
 //=============================Start server======================== //
-http.listen(process.env.PORT || 3000);
-console.log("server connected to 3000");
+http.listen(process.env.PORT || 4000);
+console.log("server connected to 4000");
 
 module.exports = app;
 
