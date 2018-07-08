@@ -119,10 +119,7 @@
             width: 200px;
         }
 
-        /*#server{*/
-            /*background: #FFFFFF;*/
-            /*color: #CB4B16;*/
-        /*}*/
+
 
         i {
             margin: 0 8px;
@@ -135,7 +132,7 @@
         img {
             transition: -webkit-transform 0.25s ease;
             transition: transform 0.25s ease;
-            margin: 0px 10px 0 30px;
+            /*margin: 0px 10px 0 30px;*/
         }
 
         img:active {
@@ -143,41 +140,119 @@
             transform: scale(2);
         }
 
-        #outerSender {
-            padding: 0 0 0 70px;
+        .span {
+            flex-basis: 100%;
         }
 
-        #outerReceiver {
-            padding: 0 70px 0 0;
+        #outerSender {
+            width: 100%;
+            padding: 0 0 0 40%;
         }
 
         #sender {
-            width: auto;
-            text-align: right;
-            /*border: 2px solid red;*/
-            border-radius: 5px;
-            background-color: #99CC66;
+            flex-basis: 0;
+            max-width: 400px;
             color: white;
-            margin: 1px 0 1px 0;
+            margin: 2px 0 0 2px;
+            display: flex;
             overflow-wrap: break-word;
-            font-size: 20px;
+            font-size: 15px;
         }
 
-        .innergap {
-            padding: 10px;
+        #innerSender {
+            width: 100%;
+            flex-grow: 0;
+            right: 0;
+            /*flex-shrink: 0;*/
+            flex-basis: 0;
+            padding: 8px;
+            background-color: #009900;
+            border: 1px solid #99CC66;
+            border-radius: 15px;
+        }
+
+        #outerReceiver {
+            width: 100%;
+            padding: 0 40% 0 0;
         }
 
         #receiver {
-            left: 10px;
-            width: auto;
-            text-align: left;
-            background-color: #03A295;
+            flex-basis: 0;
+            max-width: 400px;
             color: white;
-            /*border: 2px solid red;*/
-            border-radius: 5px;
-            margin: 1px 0 1px 0;
+            margin: 2px 0 0 2px;
+            /*border: 1px solid #99CC66;*/
+            display: flex;
             overflow-wrap: break-word;
-            font-size: 20px;
+            font-size: 15px;
+        }
+
+        #innerReceiver {
+            width: 100%;
+            flex-grow: 0;
+            right: 0;
+            /*flex-shrink: 0;*/
+            flex-basis: 0;
+            padding: 8px;
+            background-color: #0000FF;
+            border: 1px solid #0000FF;
+            border-radius: 15px;
+        }
+
+        #imageSender {
+            flex-basis: 0;
+            max-width: 400px;
+            height: auto;
+            color: white;
+            margin: 2px 0 0 2px;
+            display: flex;
+            overflow-wrap: break-word;
+            font-size: 15px;
+        }
+
+        #innerImageSender {
+            width: 100%;
+            height: 100%;
+            flex-grow: 0;
+            right: 0;
+            /*flex-shrink: 0;*/
+            flex-basis: 0;
+            padding: 8px;
+            border: 1px solid #99CC66;
+            border-radius: 15px;
+        }
+
+        #imageReceiver {
+            flex-basis: 0;
+            max-width: 400px;
+            height: auto;
+            color: white;
+            margin: 2px 0 0 2px;
+            display: flex;
+            overflow-wrap: break-word;
+            font-size: 15px;
+        }
+
+        #innerImageReceiver {
+            width: 100%;
+            height: 100%;
+            flex-grow: 0;
+            right: 0;
+            /*flex-shrink: 0;*/
+            flex-basis: 0;
+            padding: 8px;
+            border: 1px solid #0000FF;
+            border-radius: 15px;
+        }
+
+        #innerImageSender img {
+            height: 140px;
+            width: 140px;
+        }
+
+        #innerImageReceiver img {
+            height: 140px;
+            width: 140px;
         }
 
         #disconnectChat {
@@ -197,7 +272,7 @@
         }
 
         .userStatus {
-            background-color: #A6D5D1;
+            background-color: #808080;
             color: white;
             border-radius: 5px;
             margin: 1px 0 1px 0;
@@ -213,7 +288,7 @@
 <div class="jumbotron jumbotron-fluid" id="cover">
     <div class="container">
         <div id="logo">
-            <h1><a href="/">Letz Chat</a></h1>
+            <h1><a href="/">Colloque</a></h1>
         </div>
         <div class="pick_up">
             <p id="lines"><i></i></p>
@@ -241,7 +316,7 @@
             </div>
             <div class="col-md-6">
                 <div class="logo">
-                    <h1><a href="/">Letz Chat</a></h1>
+                    <h1><a href="/">Colloque</a></h1>
                 </div>
                 <div class="panel panel-primary">
                     <div class="panel-body">
@@ -330,12 +405,12 @@
             if(message.msg.length > 0) {
                 if(socket.id === message.sender){
                     console.log("same");
-                    $chat.append('<div id="outerSender"><div id="sender"><div class="innergap">' +
+                    $chat.append('<div id="outerSender"><div id="sender"><span class="span"></span><div id="innerSender">' +
                          message.msg + '</div>' + '</div></div>').scrollTop(1E10);
                     $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
                 }
                 else{
-                    $chat.append('<div id="outerReceiver"><div id="receiver"><div class="innergap">' +
+                    $chat.append('<div id="outerReceiver"><div id="receiver"><div id="innerReceiver"><span class="span"></span>' +
                          message.msg + '</div>' +
                         '</div></div>').scrollTop(1E10);
                     $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
@@ -346,14 +421,14 @@
 
         socket.on('file submitted',(data)=>{
             if(socket.id === data.sender){
-                $chat.append('<div id="outerSender"><div id="sender">' +
-                    '<div class="innergap">' + "<img src='" + data.file + "' width=100 height=100 />" + '</div>' +
+                $chat.append('<div id="outerSender"><div id="imageSender">' +
+                    '<span class="span"></span><div id="innerImageSender">' + "<img src='" + data.file + "' />" + '</div>' +
                     '</div></div>');
                 $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
             }
             else{
-                $chat.append('<div id="outerReceiver"><div id="receiver">' +
-                    '<div class="innergap">' + "<img src='" + data.file + "' width=100 height=100 />" + '</div>' +
+                $chat.append('<div id="outerReceiver"><div id="imageReceiver">' +
+                    '<div id="innerImageReceiver"><span class="span"></span>' + "<img src='" + data.file + "' />" + '</div>' +
                     '</div></div>');
                 $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
             }
