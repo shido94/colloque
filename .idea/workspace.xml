@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2904818c-aa50-45e3-9ecf-8cd9940171c0" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/images.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/c_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/c_register.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/r_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/r_register.ejs" afterDir="false" />
     </list>
@@ -22,26 +22,17 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6135">
+            <state relative-caret-position="15">
               <caret line="409" column="49" selection-start-line="409" selection-start-column="49" selection-end-line="409" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/main.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="20" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="c_register.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="c_register.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="330" column="59" selection-start-line="330" selection-start-column="59" selection-end-line="330" selection-end-column="59" />
+            <state relative-caret-position="2118">
+              <caret line="491" lean-forward="true" selection-start-line="491" selection-end-line="491" />
               <folding>
                 <element signature="n#style#0;n#ul#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -50,14 +41,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="r_register.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="r_register.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="265" column="19" selection-start-line="265" selection-start-column="13" selection-end-line="265" selection-end-column="19" />
+            <state relative-caret-position="180">
+              <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
               <folding>
-                <element signature="n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#ul#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -68,21 +57,15 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&gt;</find>
-      <find />
-      <find>file-in</find>
-      <find />
-      <find />
-      <find>console.log(&quot;reaches&quot;);</find>
-      <find />
+      <find>$(&quot;.panel-body&quot;).stop().animate({scrollTop: $(&quot;.panel-body&quot;)[0].scrollHeight}, 1000);</find>
       <find>Total</find>
-      <find />
+      <find>file re</find>
       <find>filereas</find>
       <find>messageForm</find>
-      <find />
-      <find />
-      <find />
-      <find />
+      <find>new m</find>
+      <find>file subm</find>
+      <find>user sta</find>
+      <find>users online</find>
       <find>:</find>
       <find>userStatus</find>
       <find>serverM</find>
@@ -94,10 +77,16 @@
       <find>sender</find>
       <find>servers</find>
       <find>#server</find>
-      <find>total</find>
-      <find />
+      <find>you are</find>
       <find>Letz</find>
       <find>letz</find>
+      <find>typin</find>
+      <find>$status</find>
+      <find>style=&quot;color: blue&quot;</find>
+      <find>status</find>
+      <find>border</find>
+      <find>total</find>
+      <find>total on</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,8 +119,8 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/main.ejs" />
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/views/r_register.ejs" />
         <option value="$PROJECT_DIR$/views/c_register.ejs" />
+        <option value="$PROJECT_DIR$/views/r_register.ejs" />
       </list>
     </option>
   </component>
@@ -201,15 +190,15 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="C:\Users\Shido\Desktop\NEWCHAT\public\css" />
+      <recent name="C:\Users\Shido\Desktop\NEWCHAT" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="C:\Users\Shido\Desktop\NEWCHAT\public" />
       <recent name="C:\Users\Shido\Desktop\NEWCHAT\views" />
-      <recent name="C:\Users\Shido\Desktop\NEWCHAT" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="C:\Users\Shido\Desktop\NEWCHAT\public\css" />
       <recent name="C:\Users\Shido\Desktop\NEWCHAT" />
     </key>
   </component>
@@ -265,23 +254,23 @@
       <workItem from="1530971210318" duration="507000" />
       <workItem from="1531045214058" duration="12432000" />
       <workItem from="1531072038390" duration="10120000" />
-      <workItem from="1531083047485" duration="5696000" />
+      <workItem from="1531083047485" duration="6823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367085000" />
+    <option name="totallyTimeSpent" value="368212000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-11" width="1301" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16144201" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16144201" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22464898" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22464898" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.21528861" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -440,17 +429,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+    <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="110" column="20" lean-forward="true" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6135">
-          <caret line="409" column="49" selection-start-line="409" selection-start-column="49" selection-end-line="409" selection-end-column="49" />
+        <state relative-caret-position="2118">
+          <caret line="491" lean-forward="true" selection-start-line="491" selection-end-line="491" />
+          <folding>
+            <element signature="n#style#0;n#ul#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -461,31 +454,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        <state relative-caret-position="118">
+          <caret line="110" column="23" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="409" column="49" selection-start-line="409" selection-start-column="49" selection-end-line="409" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="265" column="19" selection-start-line="265" selection-start-column="13" selection-end-line="265" selection-end-column="19" />
+        <state relative-caret-position="180">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding>
-            <element signature="n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#ul#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="330" column="59" selection-start-line="330" selection-start-column="59" selection-end-line="330" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#ul#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
