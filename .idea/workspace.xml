@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2904818c-aa50-45e3-9ecf-8cd9940171c0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/images.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/c_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/c_register.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/r_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/r_register.ejs" afterDir="false" />
     </list>
@@ -28,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="c_register.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="c_register.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2118">
-              <caret line="491" lean-forward="true" selection-start-line="491" selection-end-line="491" />
+            <state relative-caret-position="210">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="n#style#0;n#ul#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -41,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="r_register.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="r_register.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+            <state relative-caret-position="105">
+              <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-end-line="26" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -67,10 +65,8 @@
       <find>user sta</find>
       <find>users online</find>
       <find>:</find>
-      <find>userStatus</find>
       <find>serverM</find>
       <find>serve</find>
-      <find>server</find>
       <find>chat</find>
       <find>.onlin</find>
       <find>online</find>
@@ -87,6 +83,8 @@
       <find>border</find>
       <find>total</find>
       <find>total on</find>
+      <find>userStatus</find>
+      <find>server</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -119,8 +117,8 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/main.ejs" />
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/views/c_register.ejs" />
         <option value="$PROJECT_DIR$/views/r_register.ejs" />
+        <option value="$PROJECT_DIR$/views/c_register.ejs" />
       </list>
     </option>
   </component>
@@ -254,12 +252,12 @@
       <workItem from="1530971210318" duration="507000" />
       <workItem from="1531045214058" duration="12432000" />
       <workItem from="1531072038390" duration="10120000" />
-      <workItem from="1531083047485" duration="6823000" />
+      <workItem from="1531083047485" duration="7219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368212000" />
+    <option name="totallyTimeSpent" value="368608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-11" width="1301" height="780" extended-state="6" />
@@ -436,17 +434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2118">
-          <caret line="491" lean-forward="true" selection-start-line="491" selection-end-line="491" />
-          <folding>
-            <element signature="n#style#0;n#ul#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/main.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -470,9 +457,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        <state relative-caret-position="105">
+          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-end-line="26" />
           <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="n#style#0;n#ul#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
