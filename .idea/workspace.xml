@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2904818c-aa50-45e3-9ecf-8cd9940171c0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/views/c_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/c_register.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/r_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/r_register.ejs" afterDir="false" />
-    </list>
+    <list default="true" id="2904818c-aa50-45e3-9ecf-8cd9940171c0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -29,8 +26,8 @@
       <file leaf-file-name="c_register.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="150">
+              <caret line="268" column="25" selection-start-line="268" selection-start-column="25" selection-end-line="268" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#ul#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -252,12 +249,12 @@
       <workItem from="1530971210318" duration="507000" />
       <workItem from="1531045214058" duration="12432000" />
       <workItem from="1531072038390" duration="10120000" />
-      <workItem from="1531083047485" duration="7219000" />
+      <workItem from="1531083047485" duration="7402000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368608000" />
+    <option name="totallyTimeSpent" value="368791000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-11" width="1301" height="780" extended-state="6" />
@@ -268,7 +265,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22464898" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22464898" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.21528861" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -467,8 +464,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="150">
+          <caret line="268" column="25" selection-start-line="268" selection-start-column="25" selection-end-line="268" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#ul#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
