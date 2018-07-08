@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2904818c-aa50-45e3-9ecf-8cd9940171c0" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/div.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/c_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/c_register.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/r_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/r_register.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,8 +23,14 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7770">
-              <caret line="518" column="37" selection-start-line="518" selection-start-column="37" selection-end-line="518" selection-end-column="37" />
+            <state relative-caret-position="151">
+              <caret line="218" column="53" selection-start-line="218" selection-start-column="41" selection-end-line="218" selection-end-column="53" />
+              <folding>
+                <element signature="e#12431#14091#0" />
+                <element signature="e#14131#16417#0" />
+                <element signature="e#16463#17187#0" />
+                <element signature="e#17232#17508#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -29,8 +38,12 @@
       <file leaf-file-name="c_register.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+            <state relative-caret-position="120">
+              <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+              <folding>
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,10 +51,10 @@
       <file leaf-file-name="r_register.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="272" column="43" selection-start-line="272" selection-start-column="36" selection-end-line="272" selection-end-column="43" />
+            <state relative-caret-position="150">
+              <caret line="118" column="25" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -52,36 +65,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Object.keys</find>
-      <find>socket.leave</find>
-      <find>c_connec</find>
-      <find>c_connected</find>
-      <find>c_roomsArray.push</find>
-      <find>c_roomsArray.spli</find>
-      <find>socket.id =</find>
-      <find>console</find>
-      <find>c_connected.pu</find>
-      <find>mainRoom</find>
-      <find>consol</find>
-      <find>console.lo</find>
-      <find>user disconnect</find>
-      <find>panel-footer</find>
-      <find>disconnect</find>
-      <find>send messa</find>
-      <find>reconne</find>
+      <find>new me</find>
+      <find>.file-input</find>
+      <find>user status</find>
+      <find>&gt;</find>
+      <find>&gt; 2</find>
       <find>file-in</find>
-      <find>send mes</find>
-      <find>send message</find>
-      <find>send me</find>
       <find>new messa</find>
-      <find>foo</find>
-      <find>new us</find>
-      <find>new user</find>
-      <find>new use</find>
-      <find>user d</find>
-      <find>#cover</find>
-      <find>cover</find>
-      <find>down</find>
+      <find>file submitted</find>
+      <find>console.log(&quot;reaches&quot;);</find>
+      <find>$(&quot;.panel-body&quot;).stop().animate({scrollTop: $(&quot;.panel-body&quot;)[0].scrollHeight}, 1000);</find>
+      <find>Total</find>
+      <find>Total</find>
+      <find>file re</find>
+      <find>filereas</find>
+      <find>messageForm</find>
+      <find>new m</find>
+      <find>file subm</find>
+      <find>user sta</find>
+      <find>users online</find>
+      <find>total</find>
+      <find>:</find>
+      <find>:</find>
+      <find>userStatus</find>
+      <find>#server</find>
+      <find>serverM</find>
+      <find>serve</find>
+      <find>server</find>
+      <find>chat</find>
+      <find>.onlin</find>
+      <find>online</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,12 +159,15 @@
     <option name="width" value="1082" />
     <option name="height" value="726" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,19 +183,12 @@
             <path>
               <item name="NEWCHAT" type="b2602c69:ProjectViewProjectNode" />
               <item name="NEWCHAT" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NEWCHAT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NEWCHAT" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -194,15 +203,15 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="C:\Users\Shido\Desktop\NEWCHAT\public\css" />
-      <recent name="C:\Users\Shido\Desktop\NEWCHAT" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="C:\Users\Shido\Desktop\NEWCHAT\public" />
       <recent name="C:\Users\Shido\Desktop\NEWCHAT\views" />
+      <recent name="C:\Users\Shido\Desktop\NEWCHAT" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="C:\Users\Shido\Desktop\NEWCHAT\public\css" />
       <recent name="C:\Users\Shido\Desktop\NEWCHAT" />
     </key>
   </component>
@@ -255,27 +264,28 @@
       <workItem from="1530770473905" duration="458000" />
       <workItem from="1530790640357" duration="10979000" />
       <workItem from="1530893757981" duration="41085000" />
-      <workItem from="1530971210318" duration="244000" />
+      <workItem from="1530971210318" duration="507000" />
+      <workItem from="1531045214058" duration="12190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338574000" />
+    <option name="totallyTimeSpent" value="351027000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="-4" width="1299" height="772" extended-state="6" />
+    <frame x="66" y="-11" width="1301" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16144201" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24804991" />
       <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2730109" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.21528861" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -430,13 +440,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7770">
-          <caret line="518" column="37" selection-start-line="518" selection-start-column="37" selection-end-line="518" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/c_register.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -458,19 +461,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="218" column="53" selection-start-line="218" selection-start-column="41" selection-end-line="218" selection-end-column="53" />
+          <folding>
+            <element signature="e#12431#14091#0" />
+            <element signature="e#14131#16417#0" />
+            <element signature="e#16463#17187#0" />
+            <element signature="e#17232#17508#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="120">
+          <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+          <folding>
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="272" column="43" selection-start-line="272" selection-start-column="36" selection-end-line="272" selection-end-column="43" />
+        <state relative-caret-position="150">
+          <caret line="118" column="25" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>

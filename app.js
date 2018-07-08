@@ -221,32 +221,34 @@ io.on("connection",(socket)=> {
         socket.broadcast.to(socket.room).emit('user disconnect');
 
         let ids = io.sockets.adapter.rooms[socket.room];
-        let clients = Object.keys(ids.sockets);
-        if (clients.length === 1 ) {
-            let user = roomsArray.indexOf(socket.id);
-            waitingQueue.push(data);
-            socket.leave(socket.id, function (err) {
-                if(!err){
-                    roomsArray.splice(user,1);
-                }
-            });
-        }
-        if (clients.length === 2 ) {
-            let firstUserId = clients[0];
-            let secondUserId = clients[1];
-            waitingQueue.push(firstUserId, secondUserId);
-            socket.leave(firstUserId, function (err) {
-                if(!err){
-                    let user1 = connected.indexOf(firstUserId);
-                    connected.splice(user1,1);
-                }
-            });
-            socket.leave(secondUserId, function (err) {
-                if(!err){
-                    let user2 = connected.indexOf(secondUserId);
-                    connected.splice(user2,1);
-                }
-            });
+        if(ids.length > 0) {
+            let clients = Object.keys(ids.sockets);
+            if (clients.length === 1 ) {
+                let user = roomsArray.indexOf(socket.id);
+                waitingQueue.push(data);
+                socket.leave(socket.id, function (err) {
+                    if(!err){
+                        roomsArray.splice(user,1);
+                    }
+                });
+            }
+            if (clients.length === 2 ) {
+                let firstUserId = clients[0];
+                let secondUserId = clients[1];
+                waitingQueue.push(firstUserId, secondUserId);
+                socket.leave(firstUserId, function (err) {
+                    if(!err){
+                        let user1 = connected.indexOf(firstUserId);
+                        connected.splice(user1,1);
+                    }
+                });
+                socket.leave(secondUserId, function (err) {
+                    if(!err){
+                        let user2 = connected.indexOf(secondUserId);
+                        connected.splice(user2,1);
+                    }
+                });
+            }
         }
     });
 
@@ -363,16 +365,17 @@ io.on("connection",(socket)=> {
 
     //send message
     socket.on('send message', function (data) {
-        io.sockets.to(socket.randomRoom).emit('new message', {msg: data, user: socket.username});
+        io.sockets.to(socket.randomRoom).emit('new message', {msg: data.message, user: socket.username, sender: data.sender});
     });
 
     socket.on('file submit', (msg)=> {
         let send = {
             username: socket.username,
-            file: msg.file,
-            fileName: msg.fileName
+            file: msg.message.file,
+            fileName: msg.message.fileName,
+            sender: msg.sender
         };
-        io.sockets.to(socket.room).emit('file submitted',send);
+        io.sockets.to(socket.randomRoom).emit('file submitted',send);
     });
 
     function onRandomConnect(length) {
@@ -381,7 +384,7 @@ io.on("connection",(socket)=> {
             socket.room = socket.id;
             socket.join(socket.id);
             io.sockets.to(socket.id).emit('user status', {
-                msg: 'You have connected to a room, Please wait for someone to connect',
+                msg: 'Please wait for someone to connect',
                 user: 'SERVER'
             });
         }
@@ -412,7 +415,7 @@ io.on("connection",(socket)=> {
         if(length > 2) {
             socket.join(socket.id);
             io.sockets.to(socket.id).emit('user status', {
-                msg: 'You have connected to a room, Please wait for someone to connect',
+                msg: 'Please wait for someone to connect',
                 user: 'SERVER'
             });
         }
@@ -424,7 +427,7 @@ io.on("connection",(socket)=> {
             socket.room = socket.id;
             socket.join(socket.id);
             io.sockets.to(socket.room).emit('user status', {
-                msg: 'You have connected to a room, Please wait for someone to connect',
+                msg: 'Please wait for someone to connect',
                 user: 'SERVER'
             });
         }
@@ -434,7 +437,7 @@ io.on("connection",(socket)=> {
                     socket.room = random_room;
                     socket.join(socket.room);
                     io.sockets.to(socket.room).emit('user status', {
-                        msg: 'You have connected to a room, Please wait for someone to connect',
+                        msg: 'Please wait for someone to connect',
                         user: 'SERVER'
                     });
                 }
@@ -469,7 +472,7 @@ io.on("connection",(socket)=> {
         if (length > 2) {
             socket.join(socket.id);
             io.sockets.to(socket.id).emit('user status', {
-                msg: 'You have connected to a room, Please wait for someone to connect',
+                msg: 'Please wait for someone to connect',
                 user: 'SERVER'
             });
         }
@@ -515,8 +518,8 @@ io.on("connection",(socket)=> {
 });
 
 //=============================Start server======================== //
-http.listen(process.env.PORT || 4000);
-console.log("server connected to 4000");
+http.listen(process.env.PORT || 3000);
+console.log("server connected to 3000");
 
 module.exports = app;
 

@@ -23,7 +23,7 @@
 
         .down{
             /*background-image: url("../images/black.jpg");*/
-            background-color: #03A295;
+            /*background-color: #03A295;*/
 
 
             /* Full height */
@@ -33,7 +33,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            /*background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("../images/black.jpg");*/
+            background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("../images/div.jpg");
         }
 
         .chat
@@ -63,12 +63,15 @@
 
         .panel , .chat
         {
+            background-color: #F9F9F9;
             margin-right: 5px;
         }
 
         .panel-body
         {
+            background-color: #F9F9F9;
             margin-top: 10px;
+            opacity: 1;
             overflow: auto;
             height: 479px;
         }
@@ -114,22 +117,11 @@
             width:50%;
         }
 
-        .online{
-            margin-top: 10px;
-        }
 
         #online{
-            width: 200px;
-            background: #FFFFFF;
-            color: #C62D2A;
-            display: table;
-            margin: 0 auto;
+            width: 210px;
         }
 
-        #server{
-            background: #FFFFFF;
-            color: #CB4B16;
-        }
 
         i {
             margin: 0 8px;
@@ -149,7 +141,78 @@
             transform: scale(2);
         }
 
+        #outerSender {
+            padding: 0 0 0 70px;
+        }
 
+        #outerReceiver {
+            padding: 0 70px 0 0;
+        }
+
+        #sender {
+            width: auto;
+            text-align: right;
+            /*border: 2px solid red;*/
+            border-radius: 5px;
+            background-color: #99CC66;
+            color: white;
+            margin: 1px 0 1px 0;
+            overflow-wrap: break-word;
+            font-size: 20px;
+        }
+
+        .innergap {
+            padding: 10px;
+        }
+
+        #receiver {
+            left: 10px;
+            width: auto;
+            text-align: left;
+            background-color: #03A295;
+            color: white;
+            /*border: 2px solid red;*/
+            border-radius: 5px;
+            margin: 1px 0 1px 0;
+            overflow-wrap: break-word;
+            font-size: 20px;
+        }
+
+        #disconnectChat {
+            background: red;
+        }
+
+        #messageForm {
+            background: green;
+        }
+
+        #reconnect {
+            background: green;
+        }
+
+        #home {
+            background: red;
+        }
+
+        .userStatus {
+            background-color: #A6D5D1;
+            color: white;
+            border-radius: 5px;
+            margin: 1px 0 1px 0;
+            overflow-wrap: break-word;
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        .servers {
+            background-color: #A6D5D1;
+            color: white;
+            border-radius: 5px;
+            margin: 1px 0 1px 0;
+            /*overflow-wrap: break-word;*/
+            font-size: 20px;
+            padding: 20px;
+        }
 
     </style>
 
@@ -192,9 +255,7 @@
     <div class="container" id="messageArea">
         <div class="row">
             <div class="col-md-3">
-                <!--<div class="logo">-->
-                    <!--<h1><a href="/">Letz Chat</a></h1>-->
-                <!--</div>-->
+
             </div>
             <div class="col-md-6">
                 <div class="logo">
@@ -202,7 +263,7 @@
                 </div>
                 <div class="panel panel-primary">
                     <div class="panel-body">
-                        <ul class="server" id="server"></ul>
+                        <ul id="server"></ul>
                         <ul class="chat" id="chat"></ul>
                         <ul>
                             <div id="blah"></div>
@@ -294,14 +355,24 @@
                 var msg ={};
                 msg.file = evt.target.result;
                 msg.fileName = data.name;
-                socket.emit('file submit', msg);
+                socket.emit('file submit', {message:msg, sender: socket.id});
             };
             reader.readAsDataURL(data);
         }
 
         socket.on('file submitted',(data)=>{
-            $chat.append('<div class="well"><strong>' + data.username  + '</strong> : ' + "<img src='" + data.file + "' width=100 height=100 />" + '</div>').scrollTop(1E10);
-            $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 100);
+            if(socket.id === data.sender){
+                $chat.append('<div id="outerSender"><div id="sender">' +
+                    '<div class="innergap">' + "<img src='" + data.file + "' width=100 height=100 />" + '</div>' +
+                    '</div></div>');
+                $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+            }
+            else{
+                $chat.append('<div id="outerReceiver"><div id="receiver">' +
+                    '<div class="innergap">' + "<img src='" + data.file + "' width=100 height=100 />" + '</div>' +
+                    '</div></div>');
+                $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+            }
         });
 
         $message.keyup(function(e) {
@@ -329,30 +400,40 @@
 
         $messageForm.click(function (e) {
             e.preventDefault();
-            socket.emit('send message', $message.val());
+            socket.emit('send message', {message: $message.val(),sender: socket.id});
             $message.val('');
         });
 
         socket.on('user status', function (data) {
             console.log(data);
-            $("#server").append('<div class="well" style="text-align: center"><strong>' + data.user + '</strong> : ' + data.msg + '</div>').scrollTop(1E10);
+            $("#server").append('<div class="userStatus" style="text-align: center"><strong>' + data.user + '</strong> : ' + data.msg + '</div>').scrollTop(1E10);
         });
 
         socket.on('new message', (message)  => {
-            console.log(message.msg);
             if(message.msg.length > 0) {
-                $chat.append('<div class="well" ><strong>' + message.user + '</strong> : ' + message.msg + '</div>').scrollTop(1E10);
-                $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+                if(socket.id === message.sender){
+                    console.log("same");
+                    $chat.append('<div id="outerSender"><div id="sender"><div class="innergap">' +
+                        message.msg + '</div>' + '</div></div>').scrollTop(1E10);
+                    $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+                }
+                else{
+                    $chat.append('<div id="outerReceiver"><div id="receiver"><div class="innergap">' +
+                        message.msg + '</div>' +
+                        '</div></div>').scrollTop(1E10);
+                    $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+                    console.log("other")
+                }
             }
         });
 
         socket.on('users online',(data)=>{
             if(data.c_length == undefined){
-                $users.append('<div class="well"><strong>' + "Total online" + '</strong> : ' + data.length + '</div>');
+                $users.append('<div class="servers"><strong>' + "Total online" + '</strong> : ' + data.length + '</div>');
                 $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
             }
             else{
-                $users.append('<div class="well"><strong>' + "Total online" + '</strong> : ' + data.c_length + '</div>');
+                $users.append('<div class="servers"><strong>' + "Total online" + '</strong> : ' + data.c_length + '</div>');
                 $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
             }
         });
