@@ -49,10 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>users online</find>
-      <find>:</find>
-      <find>serverM</find>
-      <find>serve</find>
       <find>chat</find>
       <find>.onlin</find>
       <find>online</find>
@@ -76,9 +72,13 @@
       <find>please</find>
       <find>inneSe</find>
       <find>#server</find>
-      <find>we will</find>
       <find>we will bw</find>
       <find>we will goi</find>
+      <find>footer</find>
+      <find>we will</find>
+      <find>::-webkit-scrollbar</find>
+      <find>scroll</find>
+      <find>disconn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -263,7 +263,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="370613000" />
+    <option name="totallyTimeSpent" value="378982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-11" width="1301" height="780" extended-state="6" />

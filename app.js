@@ -2,7 +2,11 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
-var session = require('express-session');
+var compress_images = require('compress-images');
+var fs = require("fs");
+
+
+// var session = require('express-session');
 
 var app = express();
 
@@ -21,12 +25,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // if saveUninitialized : false than it will store session till the instance is in existence
 // secret is hashing secret
 // secret should be that much complex that one couldnt guess it easily
-app.use(session({
-    secret : 'keyboard cat',
-    cookie : {maxAge : 1000* 60 * 60 * 24 * 7},
-    resave : false,
-    saveUninitialized : true
-}));
+
+// app.use(session({
+//     secret : 'keyboard cat',
+//     cookie : {maxAge : 1000* 60 * 60 * 24 * 7},
+//     resave : false,
+//     saveUninitialized : true
+// }));
 
 // random Users
 var roomsArray = [];
@@ -215,8 +220,8 @@ io.on("connection",(socket)=> {
     socket.on('user disconnect',(data,callback)=>{
         callback(true);
         io.sockets.to(data).emit('user status', {msg: ' You have disconnect from room', user: 'SERVER'});
-        socket.broadcast.to(socket.room).emit('user status', {msg: socket.username+' has disconnect from room', user: 'SERVER'});
-        io.sockets.to(socket.room).emit('users online' , {length : users.length});
+        socket.broadcast.to(socket.randomRoom).emit('user status', {msg: socket.username+' has disconnect from room', user: 'SERVER'});
+        io.sockets.to(socket.randomRoom).emit('users online' , {length : users.length});
 
         socket.broadcast.to(socket.room).emit('user disconnect');
 
@@ -369,14 +374,30 @@ io.on("connection",(socket)=> {
     });
 
     socket.on('file submit', (msg)=> {
+        console.log(msg);
+
+
         let send = {
             username: socket.username,
             file: msg.message.file,
             fileName: msg.message.fileName,
             sender: msg.sender
         };
+
+        let size = MyFun(msg.message.fileName);
+
         io.sockets.to(socket.randomRoom).emit('file submitted',send);
     });
+
+
+    function MyFun(){
+        compress_images('src/img/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}', 'build/img/', {compress_force: false, statistic: true, autoupdate: true}, false,
+            {jpg: {engine: 'mozjpeg', command: ['-quality', '60']}},
+            {png: {engine: 'pngquant', command: ['--quality=20-50']}},
+            {svg: {engine: 'svgo', command: '--multipass'}},
+            {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}}, function(){
+            });
+    }
 
     function onRandomConnect(length) {
         if (length === 1) {
