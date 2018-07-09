@@ -72,7 +72,7 @@ a:hover {
 /* Heading Titles                                                                */
 /*********************************************************************************/
 .title h2 {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #C6C2C4;
 
 }
@@ -116,7 +116,7 @@ a:hover {
 }
 
 #footer a{
-    color: #013961;
+    color: #E6E6E6;
 }
 
 #footer a:hover{
@@ -152,6 +152,23 @@ a:hover {
         margin: 5em 10px 0px 10px;
     }
 }
+
+
+@media only screen and (min-width : 301px) and (max-width : 563px) {
+    .title h2 {
+        font-size: 1.5em;
+        color: #C6C2C4;
+
+    }
+    .borders{
+        margin: 0px 10px 0px 10px;
+    }
+    .lead{
+        margin: 5em 10px 0px 10px;
+    }
+}
+
+
 
 @media only screen and (min-width : 240px) and (max-width : 300px) {
     #logo h1 {

@@ -17,7 +17,7 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="6135">
               <caret line="409" column="49" selection-start-line="409" selection-start-column="49" selection-end-line="409" selection-end-column="49" />
             </state>
           </provider>
@@ -26,10 +26,10 @@
       <file leaf-file-name="c_register.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="268" column="25" selection-start-line="268" selection-start-column="25" selection-end-line="268" selection-end-column="25" />
+            <state relative-caret-position="210">
+              <caret line="35" column="47" lean-forward="true" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
               <folding>
-                <element signature="n#style#0;n#ul#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#9314#9320#0#HTML" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -39,11 +39,8 @@
       <file leaf-file-name="r_register.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-end-line="26" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="375">
+              <caret line="25" column="32" selection-start-line="25" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -52,14 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$(&quot;.panel-body&quot;).stop().animate({scrollTop: $(&quot;.panel-body&quot;)[0].scrollHeight}, 1000);</find>
-      <find>Total</find>
-      <find>file re</find>
-      <find>filereas</find>
-      <find>messageForm</find>
-      <find>new m</find>
-      <find>file subm</find>
-      <find>user sta</find>
       <find>users online</find>
       <find>:</find>
       <find>serverM</find>
@@ -69,7 +58,6 @@
       <find>online</find>
       <find>sender</find>
       <find>servers</find>
-      <find>#server</find>
       <find>you are</find>
       <find>Letz</find>
       <find>letz</find>
@@ -82,6 +70,15 @@
       <find>total on</find>
       <find>userStatus</find>
       <find>server</find>
+      <find>1;</find>
+      <find>font-size</find>
+      <find>2.5em</find>
+      <find>please</find>
+      <find>inneSe</find>
+      <find>#server</find>
+      <find>we will</find>
+      <find>we will bw</find>
+      <find>we will goi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,7 +151,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -165,12 +161,24 @@
             <path>
               <item name="letz-chat" type="b2602c69:ProjectViewProjectNode" />
               <item name="letz-chat" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="letz-chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="letz-chat" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="letz-chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="letz-chat" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -250,11 +258,12 @@
       <workItem from="1531045214058" duration="12432000" />
       <workItem from="1531072038390" duration="10120000" />
       <workItem from="1531083047485" duration="7402000" />
+      <workItem from="1531092746610" duration="522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368791000" />
+    <option name="totallyTimeSpent" value="370613000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-11" width="1301" height="780" extended-state="6" />
@@ -447,27 +456,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="6135">
           <caret line="409" column="49" selection-start-line="409" selection-start-column="49" selection-end-line="409" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-end-line="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="375">
+          <caret line="25" column="32" selection-start-line="25" selection-end-line="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="268" column="25" selection-start-line="268" selection-start-column="25" selection-end-line="268" selection-end-column="25" />
+        <state relative-caret-position="210">
+          <caret line="35" column="47" lean-forward="true" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
           <folding>
-            <element signature="n#style#0;n#ul#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#9314#9320#0#HTML" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>

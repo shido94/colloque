@@ -384,7 +384,7 @@ io.on("connection",(socket)=> {
             socket.room = socket.id;
             socket.join(socket.id);
             io.sockets.to(socket.id).emit('user status', {
-                msg: 'Please wait for someone to connect',
+                msg: 'Please wait while we connect you',
                 user: 'SERVER'
             });
         }
@@ -415,7 +415,7 @@ io.on("connection",(socket)=> {
         if(length > 2) {
             socket.join(socket.id);
             io.sockets.to(socket.id).emit('user status', {
-                msg: 'Please wait for someone to connect',
+                msg: 'Please wait while we connect you',
                 user: 'SERVER'
             });
         }
@@ -427,7 +427,7 @@ io.on("connection",(socket)=> {
             socket.room = socket.id;
             socket.join(socket.id);
             io.sockets.to(socket.room).emit('user status', {
-                msg: 'Please wait for someone to connect',
+                msg: 'Please wait while we connect you',
                 user: 'SERVER'
             });
         }
@@ -437,7 +437,7 @@ io.on("connection",(socket)=> {
                     socket.room = random_room;
                     socket.join(socket.room);
                     io.sockets.to(socket.room).emit('user status', {
-                        msg: 'Please wait for someone to connect',
+                        msg: 'Please wait while we connect you',
                         user: 'SERVER'
                     });
                 }
@@ -472,7 +472,7 @@ io.on("connection",(socket)=> {
         if (length > 2) {
             socket.join(socket.id);
             io.sockets.to(socket.id).emit('user status', {
-                msg: 'Please wait for someone to connect',
+                msg: 'Please wait while we connect you',
                 user: 'SERVER'
             });
         }
