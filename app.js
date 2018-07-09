@@ -82,6 +82,12 @@ io.on("connection",(socket)=> {
             c_roomsArray.splice(c_roomsUser,1);
         }
         if(c_waitingQueue.length > 0){
+
+            console.log("c_conneced  ", c_connected);
+            console.log("waiting quesue ", c_waitingQueue);
+            console.log("id  ", socket.id);
+            console.log("room  ", socket.randomRoom);
+
             let waiting = c_waitingQueue.find(x => x.id === socket.id);
             let c_waitingUser = c_waitingQueue.indexOf(waiting);
             if(c_waitingUser > -1){
@@ -91,8 +97,14 @@ io.on("connection",(socket)=> {
 
         let checkCollegeConnected = c_connected.indexOf(socket.id);
         if (socket.id !== socket.room && checkCollegeConnected > -1) {
+
             let userIndex = c_connected.indexOf(socket.id);
             if (userIndex > -1) {
+
+                console.log("c_conneced  ", c_connected);
+                console.log("id  ", socket.id);
+                console.log("room  ", socket.randomRoom);
+
                 c_connected.splice(userIndex, 1);
                 let secondUserIndex = c_connected.indexOf(socket.room);
                 c_connected.splice(secondUserIndex, 1);
@@ -108,7 +120,13 @@ io.on("connection",(socket)=> {
                 });
             }
         }
+
         if (socket.id === socket.room && checkCollegeConnected > -1) {
+
+            console.log("c_conneced  ", c_connected);
+            console.log("id  ", socket.id);
+            console.log("room  ", socket.randomRoom);
+
             let idIndex = c_connected.indexOf(socket.id);
             let other = io.sockets.adapter.rooms[socket.id];
             let match = Object.keys(other.sockets);
@@ -155,6 +173,9 @@ io.on("connection",(socket)=> {
         let checkConnected = connected.indexOf(socket.id);
 
         if(socket.id !== socket.room && checkConnected > -1) {
+            console.log("conneced  ", connected);
+            console.log("id  ", socket.id);
+            console.log("room  ", socket.randomRoom);
             let idIndex = connected.indexOf(socket.id);
             connected.splice(idIndex,1);
 
@@ -174,6 +195,9 @@ io.on("connection",(socket)=> {
         }
 
         if(socket.id === socket.room && checkConnected > -1) {
+            console.log("conneced  ", connected);
+            console.log("id  ", socket.id);
+            console.log("room  ", socket.randomRoom);
             let idIndex = connected.indexOf(socket.id);
             let other = io.sockets.adapter.rooms[socket.id];
             let match = Object.keys(other.sockets);
@@ -374,8 +398,6 @@ io.on("connection",(socket)=> {
     });
 
     socket.on('file submit', (msg)=> {
-        console.log(msg);
-
 
         let send = {
             username: socket.username,
@@ -384,20 +406,8 @@ io.on("connection",(socket)=> {
             sender: msg.sender
         };
 
-        let size = MyFun(msg.message.fileName);
-
         io.sockets.to(socket.randomRoom).emit('file submitted',send);
     });
-
-
-    function MyFun(){
-        compress_images('src/img/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}', 'build/img/', {compress_force: false, statistic: true, autoupdate: true}, false,
-            {jpg: {engine: 'mozjpeg', command: ['-quality', '60']}},
-            {png: {engine: 'pngquant', command: ['--quality=20-50']}},
-            {svg: {engine: 'svgo', command: '--multipass'}},
-            {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}}, function(){
-            });
-    }
 
     function onRandomConnect(length) {
         if (length === 1) {

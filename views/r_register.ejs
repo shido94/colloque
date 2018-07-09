@@ -402,7 +402,6 @@
         socket.on('new message', (message)  => {
             if(message.msg.length > 0) {
                 if(socket.id === message.sender){
-                    console.log("same");
                     $chat.append('<div id="outerSender"><div id="sender"><span class="span"></span><div id="innerSender">' +
                          message.msg + '</div></div></div>').scrollTop(1E10);
                     $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
@@ -418,6 +417,7 @@
         });
 
         socket.on('file submitted',(data)=>{
+
             if(socket.id === data.sender){
                 $chat.append('<div id="outerSender"><div id="imageSender">' +
                     '<span class="span"></span><div id="innerImageSender">' + "<img src='" + data.file + "' />" + '</div>' +
@@ -444,9 +444,6 @@
 
         $('.file-input').bind('change', function(e){
             var data = e.originalEvent.target.files[0];
-
-            // var image =  new ImageCompressor(file)
-            // console.log(image);
 
             if(this.files[0].size > 2097152) {
                 alert("File must less than 2MB");
@@ -567,8 +564,5 @@
         });
     });
 
-    $(function() {
-
-    });
 </script>
 </html>
