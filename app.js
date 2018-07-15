@@ -2,8 +2,6 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
-var fs = require("fs");
-
 
 // var session = require('express-session');
 
@@ -68,159 +66,160 @@ io.on("connection",(socket)=> {
             msg: socket.username + ' has disconnect from room',
             user: 'SERVER'
         });
-        //<-------------------------- Disconnect College chat------------------------------------------->
+
         socket.broadcast.to(socket.room).emit('c_user disconnect');
-        let c_onlineUsers = c_users.indexOf(socket.id);
-        if (c_onlineUsers > -1) {
-            c_users.splice(c_onlineUsers, 1);
-        }
+        socket.broadcast.to(socket.room).emit('user disconnect');
 
-        let c_RoomsId = c_roomsArray.find(x => x.id === socket.id);
-        let c_roomsUser = c_roomsArray.indexOf(c_RoomsId);
-        if(c_roomsUser > -1){
-            c_roomsArray.splice(c_roomsUser,1);
-        }
-        if(c_waitingQueue.length > 0){
-
-            console.log("c_conneced  ", c_connected);
-            console.log("waiting quesue ", c_waitingQueue);
-            console.log("id  ", socket.id);
-            console.log("room  ", socket.randomRoom);
-
-            let waiting = c_waitingQueue.find(x => x.id === socket.id);
-            let c_waitingUser = c_waitingQueue.indexOf(waiting);
-            if(c_waitingUser > -1){
-                c_waitingQueue.splice(c_waitingUser,1);
+        //<-------------------------- Disconnect College chat------------------------------------------->
+        if (c_users || c_roomsArray || c_waitingQueue || c_connected) {
+            let c_onlineUsers = c_users.indexOf(socket.id);
+            if (c_onlineUsers > -1) {
+                c_users.splice(c_onlineUsers, 1);
             }
-        }
 
-        let checkCollegeConnected = c_connected.indexOf(socket.id);
-        if (socket.id !== socket.room && checkCollegeConnected > -1) {
-
-            let userIndex = c_connected.indexOf(socket.id);
-            if (userIndex > -1) {
-
+            let c_RoomsId = c_roomsArray.find(x => x.id === socket.id);
+            let c_roomsUser = c_roomsArray.indexOf(c_RoomsId);
+            if(c_roomsUser > -1){
+                c_roomsArray.splice(c_roomsUser,1);
+            }
+            if(c_waitingQueue.length > 0){
                 console.log("c_conneced  ", c_connected);
+                console.log("waiting quesue ", c_waitingQueue);
                 console.log("id  ", socket.id);
                 console.log("room  ", socket.randomRoom);
 
-                c_connected.splice(userIndex, 1);
-                let secondUserIndex = c_connected.indexOf(socket.room);
-                c_connected.splice(secondUserIndex, 1);
-                c_waitingQueue.push(socket.room);
+                let waiting = c_waitingQueue.find(x => x.id === socket.id);
+                let c_waitingUser = c_waitingQueue.indexOf(waiting);
+                if(c_waitingUser > -1){
+                    c_waitingQueue.splice(c_waitingUser,1);
+                }
+            }
+
+            let checkCollegeConnected = c_connected.indexOf(socket.id);
+            if (socket.id !== socket.room && checkCollegeConnected > -1) {
+
+                let userIndex = c_connected.indexOf(socket.id);
+                if (userIndex > -1) {
+
+                    console.log("c_conneced  ", c_connected);
+                    console.log("id  ", socket.id);
+                    console.log("room  ", socket.randomRoom);
+
+                    c_connected.splice(userIndex, 1);
+                    let secondUserIndex = c_connected.indexOf(socket.room);
+                    c_connected.splice(secondUserIndex, 1);
+                    c_waitingQueue.push(socket.randomRoom);
+                    socket.leave(socket.id, (err) => {
+                        if(!err){
+                            socket.leave(socket.room, (err) => {
+                                if(!err) {
+                                    io.sockets.in(socket.room).emit('disconnect_window', 'disconnect');
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+
+            if (socket.id === socket.room && checkCollegeConnected > -1) {
+                console.log("c_conneced  ", c_connected);
+                console.log("id  ", socket.id);
+                console.log("room  ", socket.randomRoom);
+                let idIndex = c_connected.indexOf(socket.id);
+                let other = io.sockets.adapter.rooms[socket.id];
+                let match = Object.keys(other.sockets);
+                let otherIndex = c_connected.indexOf(match[0]);
+                c_waitingQueue.push({
+                    id: match[0],
+                    email: socket.email
+                });
+
                 socket.leave(socket.id, (err) => {
-                    if(!err){
-                        socket.leave(socket.room, (err) => {
-                            if(!err) {
-                                io.sockets.in(socket.room).emit('disconnect_window', 'disconnect');
-                            }
-                        });
+                    if(!err) {
+                        c_connected.splice(idIndex,1);
                     }
                 });
+
+                socket.leave(match[0], (err) => {
+                    if(!err) {
+                        c_connected.splice(otherIndex,1);
+                    }
+                });
+
+                io.sockets.in(socket.randomRoom).emit('user status', {msg: socket.username + ' is disconnected from this room', user: 'SERVER'});
+                io.sockets.in(socket.randomRoom).emit('disconnect_window', 'disconnect');
             }
+
         }
-
-        if (socket.id === socket.room && checkCollegeConnected > -1) {
-
-            console.log("c_conneced  ", c_connected);
-            console.log("id  ", socket.id);
-            console.log("room  ", socket.randomRoom);
-
-            let idIndex = c_connected.indexOf(socket.id);
-            let other = io.sockets.adapter.rooms[socket.id];
-            let match = Object.keys(other.sockets);
-            let otherIndex = c_connected.indexOf(match[0]);
-            c_waitingQueue.push({
-                id: match[0],
-                email: socket.email
-            });
-
-            socket.leave(socket.id, (err) => {
-                if(!err) {
-                    c_connected.splice(idIndex,1);
-                }
-            });
-
-            socket.leave(match[0], (err) => {
-                if(!err) {
-                    c_connected.splice(otherIndex,1);
-                }
-            });
-
-            io.sockets.in(socket.randomRoom).emit('user status', {msg: socket.username + ' is disconnected from this room', user: 'SERVER'});
-            io.sockets.in(socket.randomRoom).emit('disconnect_window', 'disconnect');
-        }
-
 
         //<-------------------------------Disconnect Random Chat ----------------------------------->
 
-        socket.broadcast.to(socket.room).emit('user disconnect');
+        if (users || roomsArray || waitingQueue || connected) {
+            let online = users.indexOf(socket.id);
+            if (online > -1) {
+                users.splice(online, 1);
+            }
 
-        let online = users.indexOf(socket.id);
-        if (online > -1) {
-            users.splice(online, 1);
+            let roomsArrays = roomsArray.indexOf(socket.id);
+            if (roomsArrays > -1) {
+                roomsArray.splice(roomsArrays, 1);
+            }
+            let waiting = waitingQueue.indexOf(socket.id);
+            if (waiting > -1) {
+                waitingQueue.splice(waiting, 1);
+            }
+            let checkConnected = connected.indexOf(socket.id);
+
+            if(socket.id !== socket.room && checkConnected > -1) {
+                console.log("conneced  ", connected);
+                console.log("id  ", socket.id);
+                console.log("room  ", socket.randomRoom);
+                let idIndex = connected.indexOf(socket.id);
+                connected.splice(idIndex,1);
+
+                waitingQueue.push(socket.room);
+
+                let otherIndex = c_connected.indexOf(socket.room);
+
+                socket.leave(socket.id, (err) => {
+                    if (!err) {
+                        socket.leave(socket.room, (err) => {
+                            if(!err) {
+                                connected.splice(otherIndex,1);
+                            }
+                        })
+                    }
+                })
+            }
+
+            if(socket.id === socket.room && checkConnected > -1) {
+                console.log("conneced  ", connected);
+                console.log("id  ", socket.id);
+                console.log("room  ", socket.randomRoom);
+                let idIndex = connected.indexOf(socket.id);
+                let other = io.sockets.adapter.rooms[socket.id];
+                let match = Object.keys(other.sockets);
+                let otherIndex = c_connected.indexOf(match[0]);
+                waitingQueue.push(match[0]);
+
+
+                socket.leave(socket.id, (err) => {
+                    if(!err) {
+                        c_connected.splice(idIndex,1);
+                    }
+                });
+
+                socket.leave(match[0], (err) => {
+                    if(!err) {
+                        c_connected.splice(otherIndex,1);
+                    }
+                });
+
+                io.sockets.in(socket.randomRoom).emit('user status', {msg: socket.username + ' is disconnected from this room', user: 'SERVER'});
+                io.sockets.in(socket.randomRoom).emit('disconnect_window', 'disconnect');
+
+            }
         }
-
-        let roomsArrays = roomsArray.indexOf(socket.id);
-        if (roomsArrays > -1) {
-            roomsArray.splice(roomsArrays, 1);
-        }
-        let waiting = waitingQueue.indexOf(socket.id);
-        if (waiting > -1) {
-            waitingQueue.splice(waiting, 1);
-        }
-        let checkConnected = connected.indexOf(socket.id);
-
-        if(socket.id !== socket.room && checkConnected > -1) {
-            console.log("conneced  ", connected);
-            console.log("id  ", socket.id);
-            console.log("room  ", socket.randomRoom);
-            let idIndex = connected.indexOf(socket.id);
-            connected.splice(idIndex,1);
-
-            waitingQueue.push(socket.room);
-
-            let otherIndex = c_connected.indexOf(socket.room);
-
-            socket.leave(socket.id, (err) => {
-                if (!err) {
-                    socket.leave(socket.room, (err) => {
-                        if(!err) {
-                            connected.splice(otherIndex,1);
-                        }
-                    })
-                }
-            })
-        }
-
-        if(socket.id === socket.room && checkConnected > -1) {
-            console.log("conneced  ", connected);
-            console.log("id  ", socket.id);
-            console.log("room  ", socket.randomRoom);
-            let idIndex = connected.indexOf(socket.id);
-            let other = io.sockets.adapter.rooms[socket.id];
-            let match = Object.keys(other.sockets);
-            let otherIndex = c_connected.indexOf(match[0]);
-            waitingQueue.push(match[0]);
-
-
-            socket.leave(socket.id, (err) => {
-                if(!err) {
-                    c_connected.splice(idIndex,1);
-                }
-            });
-
-            socket.leave(match[0], (err) => {
-                if(!err) {
-                    c_connected.splice(otherIndex,1);
-                }
-            });
-
-            io.sockets.in(socket.randomRoom).emit('user status', {msg: socket.username + ' is disconnected from this room', user: 'SERVER'});
-            io.sockets.in(socket.randomRoom).emit('disconnect_window', 'disconnect');
-
-        }
-
     });
 
     //<---------------------------------------- For Random chat with Random user ------------------------------------>
@@ -305,7 +304,8 @@ io.on("connection",(socket)=> {
             c_users.push(socket.id);
             c_roomsArray.push({
                 id: socket.id,
-                email: form.email
+                email: form.email,
+                name: form.username
             });
 
             onCollegeConnect(c_roomsArray.length);
@@ -373,7 +373,8 @@ io.on("connection",(socket)=> {
 
             c_roomsArray.push({
                 id: data,
-                email: socket.email
+                email: socket.email,
+                name: socket.username
             });
             onCollegeConnect(c_roomsArray.length);
 
@@ -436,6 +437,12 @@ io.on("connection",(socket)=> {
                 if (user2 > -1) {
                     roomsArray.splice(user2, 1);
                 }
+
+                // socket.broadcast.to(firstUserId).emit('user status', {
+                //     msg: 'You are connected with ' + socket.username ,
+                //     user: 'SERVER'
+                // });
+
                 io.sockets.to(random_room).emit('user status', {
                     msg: 'You are connected with one stranger',
                     user: 'SERVER'

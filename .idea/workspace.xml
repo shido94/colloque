@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2904818c-aa50-45e3-9ecf-8cd9940171c0" name="Default" comment="" />
+    <list default="true" id="2904818c-aa50-45e3-9ecf-8cd9940171c0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/c_register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/c_register.ejs" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,23 +18,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="r_register.ejs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="154" column="31" lean-forward="true" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="31" />
+            <state relative-caret-position="197">
+              <caret line="110" column="59" lean-forward="true" selection-start-line="110" selection-start-column="59" selection-end-line="110" selection-end-column="59" />
               <folding>
-                <element signature="n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#2003#2060#0" />
+                <element signature="e#2217#2276#0" />
+                <element signature="e#3886#4947#0" />
+                <element signature="e#5356#5380#0" />
+                <element signature="e#5938#6613#0" />
+                <element signature="e#6676#7658#0" />
+                <element signature="e#7412#7705#0" />
+                <element signature="e#7758#9382#0" />
+                <element signature="e#9434#9677#0" />
+                <element signature="e#9864#10289#0" />
+                <element signature="e#10344#12189#0" />
+                <element signature="e#12253#12639#0" />
+                <element signature="e#12763#12984#0" />
+                <element signature="e#13053#13187#0" />
+                <element signature="e#13228#13489#0" />
+                <element signature="e#17402#18126#0" />
+                <element signature="e#18171#18447#0" />
               </folding>
             </state>
           </provider>
@@ -40,13 +50,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>chat</find>
-      <find>.onlin</find>
-      <find>online</find>
-      <find>sender</find>
-      <find>servers</find>
-      <find>you are</find>
-      <find>Letz</find>
       <find>letz</find>
       <find>typin</find>
       <find>$status</find>
@@ -70,6 +73,13 @@
       <find>::-webkit-scrollbar</find>
       <find>scroll</find>
       <find>disconn</find>
+      <find>down</find>
+      <find>emit</find>
+      <find>messageArea</find>
+      <find>new user</find>
+      <find>c_roomsArray.</find>
+      <find>c_roomsArray</find>
+      <find>c_roomsArray.push</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -101,9 +111,10 @@
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/views/main.ejs" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
-        <option value="$PROJECT_DIR$/views/c_register.ejs" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/r_register.ejs" />
+        <option value="$PROJECT_DIR$/views/c_register.ejs" />
+        <option value="$PROJECT_DIR$/views/videochat.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -146,23 +157,12 @@
         <subPane>
           <expand>
             <path>
-              <item name="letz-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="letz-chat" type="462c0819:PsiDirectoryNode" />
+              <item name="Colloque" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Colloque" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="letz-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="letz-chat" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="letz-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="letz-chat" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="letz-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="letz-chat" type="462c0819:PsiDirectoryNode" />
+              <item name="Colloque" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Colloque" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -177,7 +177,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.11.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webrtc-group-chat-example-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -255,27 +255,28 @@
       <workItem from="1531299954367" duration="2000" />
       <workItem from="1531420173325" duration="1308000" />
       <workItem from="1531422941753" duration="1289000" />
-      <workItem from="1531474980671" duration="636000" />
+      <workItem from="1531474980671" duration="3500000" />
+      <workItem from="1531681851739" duration="2522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="384822000" />
+    <option name="totallyTimeSpent" value="390208000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="-11" width="1301" height="780" extended-state="6" />
+    <frame x="67" y="-4" width="1299" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16144201" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18720749" />
       <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21684867" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.21528861" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.21461898" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -297,10 +298,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/chat.ejs" />
     <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
@@ -453,25 +450,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/c_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="86" column="23" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="209">
+          <caret line="150" column="35" selection-start-line="150" selection-start-column="35" selection-end-line="150" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/r_register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="154" column="31" lean-forward="true" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="31" />
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/randomConnect.ejs" />
+    <entry file="file://$PROJECT_DIR$/views/videochat.ejs" />
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="110" column="59" lean-forward="true" selection-start-line="110" selection-start-column="59" selection-end-line="110" selection-end-column="59" />
           <folding>
-            <element signature="n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#2003#2060#0" />
+            <element signature="e#2217#2276#0" />
+            <element signature="e#3886#4947#0" />
+            <element signature="e#5356#5380#0" />
+            <element signature="e#5938#6613#0" />
+            <element signature="e#6676#7658#0" />
+            <element signature="e#7412#7705#0" />
+            <element signature="e#7758#9382#0" />
+            <element signature="e#9434#9677#0" />
+            <element signature="e#9864#10289#0" />
+            <element signature="e#10344#12189#0" />
+            <element signature="e#12253#12639#0" />
+            <element signature="e#12763#12984#0" />
+            <element signature="e#13053#13187#0" />
+            <element signature="e#13228#13489#0" />
+            <element signature="e#17402#18126#0" />
+            <element signature="e#18171#18447#0" />
           </folding>
         </state>
       </provider>
