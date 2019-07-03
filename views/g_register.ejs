@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/c_register.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!--<script src="image-compressor.js"></script>-->
+
+
+    <style>
+
+        #messageArea{
+            display: none;
+        }
+
+        .down{
+            /*background-image: url('../images/black.jpg');*/
+            background-color: #03A295;
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /*background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("../images/images.jpg");*/
+        }
+
+        .chat
+        {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .chat li
+        {
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted #B3A9A9;
+        }
+
+        .chat li
+        {
+            margin-left: 60px;
+        }
+
+        .chat li .chat-body p
+        {
+            margin: 0;
+            color: #777777;
+        }
+
+        .panel , .chat
+        {
+            background-color: #F9F9F9;
+            margin-right: 5px;
+        }
+
+        .panel-body
+        {
+            background-color: #F9F9F9;
+            margin-top: 10px;
+            overflow: auto;
+            height: 490px;
+        }
+
+        ::-webkit-scrollbar-track
+        {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            background-color: #F5F5F5;
+        }
+
+        ::-webkit-scrollbar
+        {
+            width: 5px;
+            background-color: #F5F5F5;
+            /*display: none;*/
+        }
+
+
+        ::-webkit-scrollbar-thumb
+        {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #555;
+        }
+
+        .logo{
+            text-align: center;
+        }
+
+        .logo h1 {
+            text-align: center;
+            display: inline-block;
+            margin-bottom: 0.0em;
+            font-size: 3.5em;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #F5F5F5;
+        }
+
+        #exitButton button{
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 10px;
+            width:50%;
+        }
+
+
+        #online{
+            width: 200px;
+        }
+
+
+
+        i {
+            margin: 0 8px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        img {
+            transition: -webkit-transform 0.25s ease;
+            transition: transform 0.25s ease;
+            /*margin: 0px 10px 0 30px;*/
+        }
+
+        img:active {
+            -webkit-transform: scale(2);
+            transform: scale(2);
+        }
+
+
+        .span {
+            flex-basis: 100%;
+        }
+
+        #outerSender {
+            width: 100%;
+            word-break: break-word;
+            padding: 0 0 0 40%;
+        }
+
+        #sender {
+            max-width: 400px;
+            color: white;
+            margin: 2px 0 0 2px;
+            display: flex;
+            flex-wrap: wrap;               /*  added  */
+            overflow-wrap: break-word;
+            font-size: 15px;
+            justify-content: flex-end;     /*  added  */
+        }
+
+        #innerSender {
+            padding: 8px;
+            background-color: #19A319;
+            border: 1px solid #19A319;
+            border-radius: 15px;
+        }
+
+        #outerReceiver {
+            width: 100%;
+            word-break: break-word;
+            padding: 0 40% 0 0;
+        }
+
+        #receiver {
+            max-width: 400px;
+            color: white;
+            margin: 2px 0 0 2px;
+            display: flex;
+            flex-wrap: wrap;               /*  added  */
+            overflow-wrap: break-word;
+            font-size: 15px;
+            justify-content: left;     /*  added  */
+        }
+
+        #innerReceiver {
+            padding: 8px;
+            background-color: #0084ff;
+            border: 1px solid #0084ff;
+            border-radius: 15px;
+        }
+
+        #imageSender {
+            flex-basis: 0;
+            max-width: 400px;
+            height: auto;
+            color: white;
+            margin: 2px 0 0 2px;
+            display: flex;
+            overflow-wrap: break-word;
+            font-size: 15px;
+        }
+
+        #innerImageSender {
+            width: 100%;
+            height: 100%;
+            flex-grow: 0;
+            right: 0;
+            /*flex-shrink: 0;*/
+            flex-basis: 0;
+            padding: 8px;
+            border: 1px solid #99CC66;
+            border-radius: 15px;
+        }
+
+        #imageReceiver {
+            flex-basis: 0;
+            max-width: 400px;
+            height: auto;
+            color: white;
+            margin: 2px 0 0 2px;
+            display: flex;
+            overflow-wrap: break-word;
+            font-size: 15px;
+        }
+
+        #innerImageReceiver {
+            width: 100%;
+            height: 100%;
+            flex-grow: 0;
+            right: 0;
+            /*flex-shrink: 0;*/
+            flex-basis: 0;
+            padding: 8px;
+            border: 1px solid #0000FF;
+            border-radius: 15px;
+        }
+
+        #innerImageSender img {
+            height: 140px;
+            width: 140px;
+        }
+
+        #innerImageReceiver img {
+            height: 140px;
+            width: 140px;
+        }
+
+        #disconnectChat {
+            background: red;
+        }
+
+        #messageForm {
+            background: green;
+        }
+
+        #reconnect {
+            background: green;
+        }
+
+        #home {
+            background: red;
+        }
+
+        .userStatus {
+            color: black;
+            border-radius: 5px;
+            margin: 1px 55px 1px 0;
+            overflow-wrap: break-word;
+            font-size: 20px;
+            padding: 8px;
+        }
+
+        #innerSender a {
+            color: white;
+            text-decoration: auto;
+        }
+
+        #innerReceiver a {
+            color: white;
+            text-decoration: auto;
+        }
+
+
+    </style>
+
+</head>
+<body id="body">
+<div class="jumbotron jumbotron-fluid" id="cover">
+    <div class="container">
+        <div id="logo">
+            <h1><a href="/">Colloque</a></h1>
+        </div>
+        <div class="pick_up">
+            <p id="lines"><i></i></p>
+        </div>
+        <form id="userForm">
+            <div class="form-group">
+                <label for="exampleInputPassword1">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <p id="error" style="color: red"></p>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="lead">
+            <p >You are going to chat in a Group.<br>
+                Please avoid abusive language.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="down">
+    <div class="container" id="messageArea">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6">
+                <div class="logo">
+                    <h1><a href="/">Colloque</a></h1>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <ul class="server" id="server"></ul>
+                        <hr>
+                        <ul class="chat" id="chat"></ul>
+                        <ul>
+                            <div id="blah"></div>
+                        </ul>
+                        <ul id="status" style="color: blue"></ul>
+                        <div class="reconnect" id="new_chat">
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="col-md-4">
+
+                                <span class="input-group-btn" id="exitButton">
+                                    <ul id="online"></ul>
+                                    <button class="btn btn-warning btn-sm" id="reconnect">Chat</button>
+                                    &nbsp
+                                    <button class="btn btn-warning btn-sm" id="home">Exit</button>
+                                </span>
+                            </div>
+                            <div class="col-md-4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-warning btn-sm" id="disconnectChat">Esc</button>
+                            </span>
+                            <input id="message" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                            <span class="input-group-btn">
+                                <label for="file-input">
+                                    <i id="design" class="fa fa-paperclip fa-lg" aria-hidden="true"></i>
+                                </label>
+                                <input type="file" class="file-input hide" name="file"  accept="image/*" capture="" id="file-input">
+                                <button class="btn btn-warning btn-sm" id="messageForm">Send</button>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    $(function(){
+        var socket = io.connect();
+        var $newChat = $('#new_chat');
+        var $reConnect = $("#reconnect");
+        var $status = $('#status');
+        var $disconnect = $('#disconnectChat');
+        var $messageForm = $('#messageForm');
+        var $message = $('#message');
+        var $chat = $('#chat');
+        var $messageArea = $('#messageArea');
+        var $userFormArea = $('#cover');
+        var $userForm = $('#userForm');
+        var $users = $('#online');
+        var $username = $('#username');
+        var $fileInput = $('#file-input');
+        var $error = $('#error');
+
+
+        var timeout;
+        var typing;
+
+
+        $messageForm.click(function (e) {
+            e.preventDefault();
+            socket.emit('g_send message', {message: $message.val(), sender: socket.id});
+            $message.val('');
+        });
+
+        socket.on('g_new message', (message)  => {
+            if(message.msg.length > 0) {
+                console.log(socket.id);
+                console.log(message.sender);
+                if(socket.id === message.sender){
+                    $chat.append('<div id="outerSender"><div id="sender"><span class="span"></span><div id="innerSender">' +
+                         message.msg + '</div></div></div>').scrollTop(1E10);
+                    $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+                }
+                else{
+                    $chat.append('<div id="outerReceiver"><div id="receiver"><div id="innerReceiver"><span class="span"></span>' +
+                        '<b style="color: black">' + message.user + '</b><br>' + message.msg + '</div>' +
+                        '</div></div>').scrollTop(1E10);
+                    $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+                }
+            }
+        });
+
+        socket.on('g_file submitted',(data)=>{
+            console.log('name :', data);
+            if(socket.id === data.sender){
+                $chat.append('<div id="outerSender"><div id="sender"><span class="span"></span><div id="innerSender">' +
+                    "CLick here -> <a href=" + data.file + " download="+ data.fileName +">" + data.fileName + " </a>" + '</div>' +
+                    '</div></div>').scrollTop(1E10);
+                $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+            }
+            else{
+                $chat.append('<div id="outerReceiver"><div id="receiver"><div id="innerReceiver"><span class="span"></span>' +
+                     '<b style="color: black">' + data.username + '</b><br>' + "CLick here -> <a href=" + data.file + " download="+ data.fileName +">" + data.fileName + " </a>" + '</div>' +
+                        '</div></div>').scrollTop(1E10);
+                $(".panel-body").stop().animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+            }
+        });
+
+
+        function timeoutFunction() {
+            typing = false;
+            socket.emit("typing", false);
+        }
+
+        $("#home").click(()=>{
+            window.location = '/';
+        });
+
+        $('.file-input').bind('change', function(e){
+            var data = e.originalEvent.target.files[0];
+
+            if(this.files[0].size > 2097152) {
+                alert("File must less than 2MB");
+                return;
+            }
+            else{
+                readThenSendFile(data);
+            }
+        });
+
+        function readThenSendFile(data){
+            var reader = new FileReader();
+            reader.onload = function(evt){
+                var msg ={};
+                msg.file = evt.target.result;
+                msg.fileName = data.name;
+                socket.emit('g_file submit', {message:msg, sender: socket.id});
+            };
+            reader.readAsDataURL(data);
+        }
+
+        // $message.keyup(function(e) {
+        //     typing = true;
+        //     socket.emit('g_typing', 'typing...');
+        //     clearTimeout(timeout);
+        //     timeout = setTimeout(timeoutFunction, 2000);
+        // });
+
+        // socket.on('g_typing', function(data) {
+        //     if (data) {
+        //         $status.html(data);
+        //     } else {
+        //         $status.html("");
+        //     }
+        // });
+
+        // when the client hits ENTER on their keyboard
+        $message.keypress(function(e) {
+            if(e.which == 13) {
+                $(this).blur();
+                $messageForm.focus().click();
+            }
+        });
+
+        socket.on('g_user status', function (data) {
+            console.log(data);
+            $("#server").append('<div class="userStatus" style="text-align: center"><strong>' + data.user + '</strong> : ' + data.msg + '</div>').scrollTop(1E10);
+        });
+
+
+
+        // socket.on('g_user disconnect', () => {
+        //     $newChat.show();
+        //     $disconnect.attr('disabled',true);
+        //     $messageForm.attr('disabled',true);
+        //     $message.attr('disabled',true);
+        //     $fileInput.attr('disabled',true);
+        //     $(".panel-body").stop().animate({scrollTop: $(".panel-body")[0].scrollHeight}, 1000);
+        // });
+
+        $disconnect.click((e) => {
+            e.preventDefault();
+            socket.emit('g_user disconnect', socket.id, (data) => {
+                if(data){
+                    window.location = '/';
+                }
+            });
+        });
+
+        $userForm.submit(function (e) {
+            e.preventDefault();
+            socket.emit('g_new user', $username.val(), function (data) {
+                console.log($username.val());
+                if (data) {
+                    $userFormArea.hide();
+                    $newChat.hide();
+                    $messageArea.show();
+                    $("body").css("background" , "#FFFFFF");
+                }
+                else{
+                    $error.text('Please submit username and password');
+                }
+            });
+            $username.val('');
+        });
+
+        $reConnect.click((e)=>{
+            $chat.empty();
+            $("#server").empty();
+            $users.empty();
+            e.preventDefault();
+            socket.emit('g_user reconnect', socket.id,(data)=>{
+                if(data){
+                    $newChat.hide();
+                    $disconnect.attr('disabled',false);
+                    $messageForm.attr('disabled',false);
+                    $message.attr('disabled',false);
+                    $fileInput.attr('disabled',false);
+                    $('.panel-footer').show();
+                }
+            })
+        });
+    });
+
+</script>
+</html>

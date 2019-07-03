@@ -51,6 +51,10 @@ app.get('/col_signup', (req, res) => {
     res.render('c_register');
 });
 
+app.get('/grp_signup', (req, res) => {
+    res.render('g_register');
+});
+
 app.get('/ran_signup', (req, res) => {
     res.render('r_register');
 });
@@ -60,7 +64,6 @@ io.on("connection",(socket)=> {
 
     socket.on('disconnect', function () {
 
-
         socket.broadcast.to(socket.room).emit
         ('user status', {
             msg: socket.username + ' has disconnect from room',
@@ -69,6 +72,7 @@ io.on("connection",(socket)=> {
 
         socket.broadcast.to(socket.room).emit('c_user disconnect');
         socket.broadcast.to(socket.room).emit('user disconnect');
+
 
         //<-------------------------- Disconnect College chat------------------------------------------->
         if (c_users || c_roomsArray || c_waitingQueue || c_connected) {
@@ -150,7 +154,7 @@ io.on("connection",(socket)=> {
                 io.sockets.in(socket.randomRoom).emit('disconnect_window', 'disconnect');
             }
 
-        }
+        } 
 
         //<-------------------------------Disconnect Random Chat ----------------------------------->
 
@@ -219,6 +223,54 @@ io.on("connection",(socket)=> {
                 io.sockets.in(socket.randomRoom).emit('disconnect_window', 'disconnect');
 
             }
+        } 
+                    //<-------------------------- Disconnect Group chat------------------------------------------->
+    
+
+        
+
+    });
+
+    //<---------------------------------------- For Group chat ------------------------------------>
+    socket.on('g_new user', function (username, callback) {
+        if(username === ''){
+            callback(false);
+        }
+        else {
+            callback(true);
+            console.log('data: ', username);
+            socket.username = username;
+            io.sockets.emit('g_user status', {
+                    msg: `${socket.username} is added to this group`,
+                    user: 'SERVER'
+                });
+        }
+    });
+
+     //send message
+    socket.on('g_send message', function (data) {
+        console.log('data: ', data, socket.username);
+        io.sockets.emit('g_new message', {msg: data.message, user: socket.username, sender: data.sender});
+    });
+
+    socket.on('g_file submit', (msg)=> {
+
+        let send = {
+            username: socket.username,
+            file: msg.message.file,
+            fileName: msg.message.fileName,
+            sender: msg.sender
+        };
+
+        io.sockets.emit('g_file submitted',send);
+    });
+
+    socket.on('g_typing', function (data) {
+        if(data == false){
+            socket.broadcast.emit('g_typing');
+        }
+        else{
+            socket.broadcast.emit('g_typing', socket.username+ ' is '+ data);
         }
     });
 
@@ -289,6 +341,14 @@ io.on("connection",(socket)=> {
         onRandomConnect(roomsArray.length);
 
     });
+
+        //<---------------------------------------- For Group chat ------------------------------------>
+
+     socket.on('g_user disconnect',(data,callback)=>{
+        callback(true);
+        io.sockets.to(data).emit('g_user status', {msg: ' You disconnect yourself from room', user: 'SERVER'});
+        socket.broadcast.emit('g_user status', {msg: socket.username+' has disconnected from room', user: 'SERVER'});
+     });
 
     //<---------------------------------------- For Random College chat with College user ------------------------------------>
 
@@ -394,6 +454,7 @@ io.on("connection",(socket)=> {
 
     //send message
     socket.on('send message', function (data) {
+        console.log('data: ', data, socket.username);
         io.sockets.to(socket.randomRoom).emit('new message', {msg: data.message, user: socket.username, sender: data.sender});
     });
 
